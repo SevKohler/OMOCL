@@ -1,0 +1,25 @@
+archetype_id: "openEHR-EHR-OBSERVATION.clinical_frailty_scale.v1"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 40483383
+    measurement_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+    unit:
+      optional: true
+      alternatives: *valueAlternatives
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

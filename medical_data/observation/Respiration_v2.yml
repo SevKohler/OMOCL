@@ -1,0 +1,27 @@
+archetype_id: "openEHR-EHR-OBSERVATION.respiration.v2"
+
+mappings:
+  - type: "Measurement"
+    base_path: "/data[at0001]/events[at0002]"
+    concept_id:
+      alternatives:
+        - code: 4154772
+    measurement_date:
+      alternatives:
+        - path: "."
+        - path: "../../"
+    value:
+      alternatives: &valueAlternatives
+        - path: "data[at0003]/items[at0004]"
+    unit:
+      alternatives:
+        - code: 8541
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

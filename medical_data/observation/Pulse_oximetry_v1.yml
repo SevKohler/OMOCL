@@ -1,0 +1,102 @@
+archetype_id: "openEHR-EHR-OBSERVATION.pulse_oximetry.v1"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4196147
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives1
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]"
+    unit:
+      optional: true
+      alternatives: *valueAlternatives1
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives1
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives1
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives1
+
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 40760909
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives2
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0044]"
+    unit:
+      optional: true
+      alternatives: *valueAlternatives2
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives2
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives2
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives2
+
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 36305056
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives3
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0045]"
+    unit:
+      optional: true
+      alternatives: *valueAlternatives3
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives3
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives3
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives3
+
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3007930
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives4
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0046]"
+    unit:
+      optional: true
+      alternatives: *valueAlternatives4
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives4
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives4
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives4
+

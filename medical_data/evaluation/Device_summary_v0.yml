@@ -1,0 +1,6 @@
+archetype_id: "openEHR-EHR-EVALUATION.device_summary.v0"
+
+mappings:
+  - type: "Include"
+    base_path: "/data[at0001]/items[at0022]/items[openEHR-EHR-CLUSTER.device.v1]"
+    archetype_id: "openEHR-EHR-CLUSTER.device.v1"

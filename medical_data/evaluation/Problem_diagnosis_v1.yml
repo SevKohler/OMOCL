@@ -1,0 +1,20 @@
+archetype_id: "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+
+mappings:
+  - type: "ConditionOccurrence"
+    concept_id:
+      alternatives:
+        - path: "data[at0001]/items[at0002]"
+    condition_start_date:
+      alternatives:
+        - path: "data[at0001]/items[at0077]"
+        - path: "../context"
+    condition_end_date:
+      optional: true
+      alternatives:
+        - path: "data[at0001]/items[at0030]"
+    condition_status_concept_id:
+      optional: true
+      alternatives:
+        - path: "data[at0001]/items[openEHR-EHR-CLUSTER.problem_qualifier.v1]/items[at0004]"
+        - code: 32893

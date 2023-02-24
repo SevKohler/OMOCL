@@ -1,0 +1,15 @@
+archetype_id: "openEHR-EHR-ACTION.procedure.v1"
+
+mappings:
+  - type: "ProcedureOccurrence"
+    concept_id:
+      alternatives:
+        - path: "description[at0001]/items[at0002]"
+    procedure_start_date:
+      alternatives:
+        - path: "description[at0001]/items[at0066]"
+        - path: "."
+    procedure_end_date:
+      optional: true
+      alternatives:
+        - path: "description[at0001]/items[at0060]"

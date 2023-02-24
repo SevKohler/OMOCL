@@ -1,0 +1,48 @@
+archetype_id: "openEHR-EHR-OBSERVATION.blood_pressure.v2"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4152194
+    measurement_date:
+      alternatives:
+        - path: "data[at0001]/events[at0006]"
+    value:
+      alternatives: &valueAlternatives1
+        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0004]"
+    unit:
+      alternatives:
+        - code: 8876
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives1
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives1
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives1
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4154790
+    measurement_date:
+      alternatives:
+        - path: "data[at0001]/events[at0006]"
+    value:
+      alternatives: &valueAlternatives2
+        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0005]"
+    unit:
+      alternatives:
+        - code: 8876
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives2
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives2
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives2

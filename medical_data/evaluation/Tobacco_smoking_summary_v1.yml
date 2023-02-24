@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-EVALUATION.tobacco_smoking_summary.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4041306
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0089]"
+        - path: "/data[at0001]/items[at0043]"

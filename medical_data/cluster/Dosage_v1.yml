@@ -1,0 +1,22 @@
+archetype_id: "openEHR-EHR-CLUSTER.dosage.v1"
+
+mappings:
+  - type: "DrugExposure"
+    concept_id:
+      alternatives:
+        - path: "../items[at0020]"
+    drug_exposure_start_date:
+      alternatives:
+        - path: "../items[at0043]"
+        - path: "../../"
+    drug_exposure_end_date:
+      alternatives:
+        - path: "../items[at0043]"
+        - path: "../../"
+    quantity:
+      optional: true
+      alternatives:
+        - multiplication:
+            - path: "/items[at0144]"
+            - path: "/items[at0164]"
+        - path: "/items[at0144]"

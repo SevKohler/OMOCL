@@ -1,0 +1,23 @@
+archetype_id: "openEHR-EHR-CLUSTER.specimen.v1"
+
+mappings:
+  - type: "Specimen"
+    concept_id:
+      alternatives:
+        - path: "/items[at0029]"
+        - path: "/items[at0098]"
+    specimen_date:
+      alternatives:
+      - path: "/items[at0034]"
+    quantity:
+      optional: true
+      alternatives:
+        - path: "/items[at0099]"
+    specimen_source_id:
+      optional: true
+      alternatives:
+        - path: "/items[at0001]"
+    anatomic_site_concept:
+      optional: true
+      alternatives:
+        - path: "/items[at0013]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0001]"

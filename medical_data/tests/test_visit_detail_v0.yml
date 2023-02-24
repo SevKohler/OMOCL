@@ -1,0 +1,22 @@
+archetype_id: "openEHR-EHR-INSTRUCTION.test_visit_detail.v0"
+
+mappings:
+  - type: "ConditionOccurrence"
+    concept_id:
+      alternatives:
+        - path: "data[at0001]/items[at0002]"
+    condition_start_date:
+      alternatives:
+        - path: "data[at0001]/items[at0077]"
+        - path: "../context"
+    condition_end_date:
+      optional: true
+      alternatives:
+        - path: "data[at0001]/items[at0030]"
+    condition_status_concept_id:
+      optional: true
+      alternatives:
+        - code: 32893
+    visit_detail_id:
+      alternatives:
+        - path: "description[at0002]/items[at0091]"

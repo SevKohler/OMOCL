@@ -1,0 +1,25 @@
+archetype_id: "openEHR-EHR-OBSERVATION.body_temperature.v2"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3020891
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0003]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0002]/events[at0003]/data[at0001]/items[at0004]"
+    unit:
+      alternatives: *valueAlternatives
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

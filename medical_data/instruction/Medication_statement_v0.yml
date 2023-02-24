@@ -1,0 +1,25 @@
+archetype_id: "openEHR-EHR-OBSERVATION.medication_statement.v0"
+
+mappings:
+  - type: "DrugExposure"
+    base_path: "data[at0001]/events[at0002]"
+    concept_id:
+      alternatives:
+        - path: "data[at0003]/items[at0006]"
+    drug_exposure_start_date:
+      alternatives:
+        - path: "data[at0003]/items[at0024]"
+        - path: "data[at0003]/items[at0019]"
+        - path: "."
+    drug_exposure_end_date:
+      alternatives:
+        - path: "data[at0003]/items[at0025]"
+        - path: "data[at0003]/items[at0021]"
+        - path: "data[at0003]/items[at0026]"
+        - path: "data[at0003]/items[at0024]"
+        - path: "data[at0003]/items[at0019]"
+        - path: "."
+    route_concept_id:
+      optional: true
+      alternatives:
+        - path: "data[at0003]/items[at0030]"

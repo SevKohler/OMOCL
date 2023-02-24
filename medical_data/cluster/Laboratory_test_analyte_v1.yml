@@ -1,0 +1,27 @@
+archetype_id: "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - path: "/items[at0024]"
+    measurement_date:
+      alternatives:
+        - path: "/items[at0025]"
+        - path: "../../"
+        - path: "../../../"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0001]"
+    unit:
+      optional: true
+      alternatives: *valueAlternatives
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

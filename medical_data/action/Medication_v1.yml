@@ -1,0 +1,24 @@
+archetype_id: "openEHR-EHR-ACTION.medication.v1"
+
+mappings:
+  - type: "DrugExposure"
+    concept_id:
+      alternatives:
+        - path: "/description[at0017]/items[at0020]"
+    drug_exposure_start_date:
+      alternatives:
+        - path: "/items[at0043]"
+        - path: "../"
+        - path: "."
+    drug_exposure_end_date:
+      alternatives:
+        - path: "/items[at0043]"
+        - path: "../"
+        - path: "."
+    quantity:
+      optional: true
+      alternatives:
+        - multiplication:
+            - path: "/description[at0017]/items[openEHR-EHR-CLUSTER.dosage.v1]/items[at0144]"
+            - path: "/description[at0017]/items[openEHR-EHR-CLUSTER.dosage.v1]/items[at0164]"
+        - path: "/description[at0017]/items[openEHR-EHR-CLUSTER.dosage.v1]/items[at0144]"

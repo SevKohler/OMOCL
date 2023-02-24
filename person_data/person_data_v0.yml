@@ -1,0 +1,22 @@
+archetype_id: "openEHR-EHR-ADMIN_ENTRY.person_data.v0"
+
+mappings:
+  - type: "Person"
+    gender_concept:
+      alternatives:
+        - path: "../content[openEHR-EHR-EVALUATION.gender.v1]/data[at0002]/items[at0019]"
+        - code: 0
+    year_of_birth:
+      alternatives:
+        - path: "/data[at0001]/items[openEHR-EHR-CLUSTER.person_birth_data_iso.v0]/items[at0001]"
+        - path: "../content[openEHR-EHR-OBSERVATION.age.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+        - code: 0
+    ethnicity_concept_id:
+      alternatives:
+        - path: "/data[at0001]/items[openEHR-EHR-CLUSTER.ethnischer_hintergrund.v0]/items[at0002]"
+        - path: "/data[at0001]/item[openEHR-EHR-EVALUATION.ethnicity.v1]/items[at0003]"
+        - code: 0
+    birth_datetime:
+      optional: true
+      alternatives:
+        - path: "/data[at0001]/items[openEHR-EHR-CLUSTER.person_birth_data_iso.v0]/items[at0001]"

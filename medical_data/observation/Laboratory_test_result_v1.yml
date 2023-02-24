@@ -1,0 +1,17 @@
+archetype_id: "openEHR-EHR-OBSERVATION.laboratory_test_result.v1"
+
+mappings:
+  - type: "Include"
+    base_path: "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]"
+    archetype_id: "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+
+  - type: "Include"
+    base_path: "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.specimen.v1]"
+    archetype_id: "openEHR-EHR-CLUSTER.specimen.v1"
+
+  - type: "Include"
+    base_path: "/data[at0001]/events[at0002]/data[at0003]/items[openEHR-EHR-CLUSTER.laboratory_test_panel.v0]/items[openEHR-EHR-CLUSTER.laboratory_test_analyte.v1]"
+    archetype_id: "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+
+  - type: "CustomMapping"
+    name: "FactRelationshipCustomConverter"

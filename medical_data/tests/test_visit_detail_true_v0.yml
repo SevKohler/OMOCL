@@ -1,0 +1,29 @@
+archetype_id: "openEHR-EHR-INSTRUCTION.test_visit_detail_true.v0"
+
+mappings:
+  - type: "DeviceExposure"
+    concept_id:
+      alternatives:
+        - path: "/items[at0003]"
+    device_exposure_start_date:
+      alternatives:
+        - path: "../"
+        - path: "../../"
+        - path: "../../../../../context"
+    device_exposure_end_date:
+      optional: true
+      alternatives:
+        - path: "../"
+        - path: "../../"
+    unique_device_id:
+      optional: true
+      alternatives:
+        - path: "/items[at0021]"
+    production_id:
+      optional: true
+      alternatives:
+        - path: "/items[at0020]"
+    visit_detail_id:
+      optional: true
+      alternatives:
+        - path: "description[at0002]/items[at0091]"

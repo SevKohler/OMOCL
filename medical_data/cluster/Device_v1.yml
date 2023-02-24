@@ -1,0 +1,28 @@
+archetype_id: "openEHR-EHR-CLUSTER.device.v1"
+
+mappings:
+  - type: "DeviceExposure"
+    concept_id:
+      alternatives:
+        - path: "/items[at0001]" 
+        - path: "/items[at0003]"
+    device_exposure_start_date:
+      alternatives:
+        - path: "../items[at0022]/items[at0008]"
+        - path: "../"
+        - path: "../../"
+        - path: "../../../../../context"
+    device_exposure_end_date:
+      optional: true
+      alternatives:
+        - path: "../items[at0022]/items[at0009]"
+        - path: "../"
+        - path: "../../"
+    unique_device_id:
+      optional: true
+      alternatives:
+        - path: "/items[at0021]"
+    production_id:
+      optional: true
+      alternatives:
+        - path: "/items[at0020]"

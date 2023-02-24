@@ -1,0 +1,13 @@
+archetype_id: "openEHR-EHR-OBSERVATION.pregnancy_status.v0"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 42528957
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
