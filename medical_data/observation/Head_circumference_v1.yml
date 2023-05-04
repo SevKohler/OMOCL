@@ -1,0 +1,25 @@
+archetype_id: "openEHR-EHR-OBSERVATION.head_circumference.v1"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4181669
+    measurement_date:
+      alternatives:
+        - path: "data[at0001]/events[at0006]"
+    value:
+      alternatives: &valueAlternatives1
+        - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]"
+    unit:
+      alternatives:
+        - path: *valueAlternatives1
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives1
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives1
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives1

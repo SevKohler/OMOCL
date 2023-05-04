@@ -1,0 +1,35 @@
+archetype_id: "openEHR-EHR-EVALUATION.alcohol_consumption_summary.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4042860 # Finding relating to alcohol drinking behavior (finding)
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0089]" # overall status
+          
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 619635 # Alcoholic drink intake
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives1
+        - path: "/data[at0001]/items[at0064]/items[at0023]" # Typical consumption (alcohol units)
+    unit:
+      alternatives:
+        - path: *valueAlternatives1
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4052945 # Stopped drinking alcohol (finding)
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/items[at0016]" # overall quit date
