@@ -1,0 +1,18 @@
+archetype_id: "openEHR-EHR-INSTRUCTION.medication_order.v3"
+
+mappings:
+  - type: "DrugExposure"
+    base_path: "activities[at0001]"
+    concept_id:
+      alternatives:
+        - path: "description[at0002]/items[at0070]"
+    drug_exposure_start_date:
+      alternatives:
+        - path: "description[at0002]/items[at0113]/items[at0012]"
+    drug_exposure_end_date:
+      alternatives:
+        - path: "description[at0002]/items[at0113]/items[at0013]"
+    route_concept_id:
+      optional: true
+      alternatives:
+        - path: "description[at0002]/items[at0091]"
