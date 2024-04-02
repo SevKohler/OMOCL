@@ -1,0 +1,22 @@
+archetype_id: "openEHR-EHR-EVALUATION.adverse_reaction_risk.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 35626089 #SNOMED Abnormal immune process (qualifier value)
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/items[at0027]" #onset of reaction
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0002]"  # Substance, mandatory since the WHAT is essential here
+    unit:
+      optional: true
+      alternatives:
+        - path: "/data[at0001]/items[at0058]" # type of immune reaction
+    qualifier:
+      alternatives:
+        - path: "/data[at0001]/items[at0063]" # status, enforce since could be refuted
+
