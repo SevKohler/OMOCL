@@ -12,3 +12,25 @@ mappings:
       alternatives:
         - path: "/data[at0001]/items[at0089]"
         - path: "/data[at0001]/items[at0043]"
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4151768 # pack years
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0074]" # overall pack years
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 44786668 # date quit tobacco smoking
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0016]" # overall quit date
