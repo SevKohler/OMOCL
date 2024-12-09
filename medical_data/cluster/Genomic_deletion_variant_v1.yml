@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-CLUSTER.genomic_deletion_variant.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 0 #No real binding, needs support for genomic extension
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0008]" #Deleted sequence, also Start positon, End position

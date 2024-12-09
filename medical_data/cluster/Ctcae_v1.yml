@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-CLUSTER.ctcae.v1"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: "/items[at0002]"
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0003]"

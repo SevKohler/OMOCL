@@ -1,0 +1,22 @@
+environment:
+  language: OMOCL/v0.0.1
+  type: Model
+  version: 0.0.1a
+  mapping: CDM/v5.4
+  openEHR:
+    archetype: "openEHR-EHR-OBSERVATION.age_assertion.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4265453
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+    unit:
+      alternatives: *valueAlternatives
+#        - code: 9448

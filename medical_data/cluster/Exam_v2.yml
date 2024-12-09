@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-CLUSTER.exam.v2"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4152364 #Examination finding [SNOMED-CT::271906008]. Archedtype mapped to the Physical examination code [SNOMED-CT::5880005], using Observation to actually be able to store the result of the examination
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0003]"

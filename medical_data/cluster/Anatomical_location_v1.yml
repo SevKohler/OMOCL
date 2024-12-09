@@ -1,0 +1,20 @@
+environment:
+  language: OMOCL/v0.0.1
+  type: Model
+  version: 0.0.1a
+  mapping: CDM/v5.4
+  openEHR:
+    archetype: "openEHR-EHR-CLUSTER.anatomical_location.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 42539300  #Anatomical location (property) [SNOMED-CT::758637006]
+    observation_date:
+      alternatives:
+        - path: "../../../../../context" 
+	value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0065]" #specific site
+		- path: "/items[at0001]" #body site name

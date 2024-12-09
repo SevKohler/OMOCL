@@ -1,0 +1,19 @@
+environment:
+  language: OMOCL/v0.0.1
+  type: Model
+  version: 0.0.1a
+  mapping: CDM/v5.4
+  openEHR:
+    archetype: "openEHR-EHR-EVALUATION.advance_care_directive.v2"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 46234705
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/items[at0006]"

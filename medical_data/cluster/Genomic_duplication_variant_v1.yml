@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-CLUSTER.genomic_duplication_variant.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 0 #No real binding, needs support for genomic extension
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0005]" #Duplicated sequence, but also needs /items[at0001] Start and /items[at0003] End

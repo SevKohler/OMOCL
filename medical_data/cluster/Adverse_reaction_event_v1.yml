@@ -1,0 +1,16 @@
+archetype_id: "openEHR-EHR-CLUSTER.adverse_reaction_event.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 43530807 #Allergic disposition [SNOMED-CT::609328004] 
+    observation_date:
+      alternatives:
+	    - path: "/items[at0008]" #Onset of reaction 
+		- path: "/items[at0015]" #Initial exposure
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0001]" #Specific substance 

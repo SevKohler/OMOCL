@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-CLUSTER.family_prevalence.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4167217 #Family history of clinical finding [SNOMED-CT::416471007]
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0030]"

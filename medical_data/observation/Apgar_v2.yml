@@ -1,0 +1,30 @@
+environment:
+  language: OMOCL/v0.0.1
+  type: Model
+  version: 0.0.1a
+  mapping: CDM/v5.4
+  openEHR:
+    archetype: "openEHR-EHR-OBSERVATION.apgar.v2"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3382285 #total apgar score
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0003]"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0002]/events[at0003]/data[at0001]/items[at0025]"
+    unit:
+      alternatives: *valueAlternatives
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

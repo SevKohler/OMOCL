@@ -1,0 +1,14 @@
+archetype_id: "openEHR-EHR-CLUSTER.genomic_variant_result.v1"
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 40772043  #Genetic variant assessment. No real binding, needs support for genomic extension
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0101]" #Variant

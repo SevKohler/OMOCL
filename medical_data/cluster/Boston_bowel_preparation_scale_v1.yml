@@ -1,0 +1,26 @@
+archetype_id: "openEHR-EHR-CLUSTER.boston_bowel_preparation_scale.v1"
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 36717586 #BBPS - Boston bowel preparation scale
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0012]"
+    unit:
+      alternatives: *valueAlternatives
+        #- code: ucum unidades si aplica
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives
