@@ -13,11 +13,11 @@ mappings:
   - type: "Specimen"
     concept_id:
       alternatives:
-        - path: "/items[at0029]"
-        - path: "/items[at0098]"
+        - path: "/items[at0029]" #Specimen type 
+        - path: "/items[at0098]" #Specimen label 
     specimen_date:
       alternatives:
-      - path: "/items[at0034]"
+      - path: "/items[at0034]" #Date/time received 
     quantity:
       optional: true
       alternatives:

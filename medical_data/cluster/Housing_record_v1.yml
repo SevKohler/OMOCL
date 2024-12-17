@@ -1,0 +1,23 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name:  Housing_record_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.housing_record.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 44804219 #Housing [SNOMED-CT::724741000000100], if coded could use Name/label /items[at0005]
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - path: "/items[at0016]" #Description
