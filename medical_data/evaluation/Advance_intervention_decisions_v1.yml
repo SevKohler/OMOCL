@@ -2,7 +2,7 @@ engine: EOS/v0.0.62
 type: model
 metadata:
   name:  Advance_intervention_decisions_v1
-  version: 0.0.1a 
+  version: 0.0.1a
 spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
@@ -13,11 +13,23 @@ mappings:
   - type: "Observation"
     concept_id:
       alternatives:
-        - code: 4151021
+        - code: 4287648 #Finding related to care planning [SNOMED-CT::397608007]
     observation_date:
       alternatives:
         - path: "../context"
     value:
-      alternatives: &valueAlternatives
-        - path: "/data[at0001]/items[at0008]" #Decisions description
-        - path: "/data[at0001]/items[at0009]" #CPR decision
+      alternatives: 
+        - conceptMap: "/data[at0001]/items[at0009]" # CPR decision
+          at0010: 3172879 # Full CPR --> "Use all resuscitation measures available"  (from Nebraska lexicon)
+          at0011: 42872484 # Limited CPR --> “For cardiopulmonary resuscitation” [SNOMED-CT::450475007] 
+          at0012: 42872485 # No CPR  --> [SNOMED-CT::450476008 | Not for cardiopulmonary resuscitation] 
+          at0013: 4129922 # Unknown --> [SNOMED-CT::261665006 | Unknown] 
+    qualifier:
+      alternatives: 
+        - conceptMap: "/data[at0001]/items[at0002]" # Intent of care
+          at0003: 4162591 # Curative --> Curative - procedure intent [SNOMED-CT::373808002]
+          at0004: 44808034 # Restorative --> Rehabilitation - intent [SNOMED-CT::827911000000105]
+          at0005: 4161275 # Supportive --> Supportive - procedure intent [SNOMED-CT::399707004]
+          at0006: 4179711 # Terminal --> Palliative intent [SNOMED-CT::363676003]
+          at0007: 4129922 # Unknown -->  Unknown [SNOMED-CT::261665006]
+		
