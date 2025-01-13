@@ -14,7 +14,7 @@ mappings:
     base_path: "/data[at0001]/events[at0002]"
     concept_id:
       alternatives:
-        - code: 4154772
+        - code: 4154772 # Rate of spontaneous respiration [SNOMED-CT::271625008]
     measurement_date:
       alternatives:
         - path: "."

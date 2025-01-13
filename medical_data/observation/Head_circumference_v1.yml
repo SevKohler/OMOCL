@@ -16,7 +16,7 @@ mappings:
         - code: 4181669
     measurement_date:
       alternatives:
-        - path: "data[at0001]/events[at0006]"
+        - path: "data[at0001]/events[at0010]"
     value:
       alternatives: &valueAlternatives1
         - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]"

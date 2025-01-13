@@ -20,4 +20,9 @@ mappings:
         - path: "."
     value:
       alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          at0005: 45878452 # Alert [LOINC::LA9340-6]
+          at0015: 45881443 # Confusion [LOINC::LA7530-4]
+          at0006: 46237777 # Voice [LOINC::LA22670-6]
+          at0007: 45881352 # Pain [LOINC::LA7460-4]
+          at0008: 45880051 # Unresponsive [LOINC::LA9343-0]

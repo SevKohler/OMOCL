@@ -13,14 +13,14 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4196147
+        - code: 4196147 # Peripheral oxygen saturation
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives1
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # SpO2
     unit:
       optional: true
       alternatives: *valueAlternatives1
@@ -38,14 +38,14 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 40760909
+        - code: 40760909 # Oxygen content in Blood by calculation
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives2
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0044]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0044]" #SpOC
     unit:
       optional: true
       alternatives: *valueAlternatives2
@@ -63,14 +63,14 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 36305056
+        - code: 36305056 # Carboxyhemoglobin/Hemoglobin.total in Arterial blood by Pulse oximetry
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives3
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0045]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0045]" # SpCO
     unit:
       optional: true
       alternatives: *valueAlternatives3
@@ -88,14 +88,14 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 3007930
+        - code: 3007930 # Methemoglobin/Hemoglobin.total in Blood
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives4
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0046]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0046]" # SpMet
     unit:
       optional: true
       alternatives: *valueAlternatives4

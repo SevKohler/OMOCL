@@ -13,7 +13,7 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4224504
+        - code: 4224504 # Pulse [SNOMED-CT::8499008]
     measurement_date:
       alternatives:
         - path: "/data[at0002]/events[at0003]"

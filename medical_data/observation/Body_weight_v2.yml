@@ -13,7 +13,7 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 3025315
+        - code: 3025315 # Body weight
     measurement_date:
       alternatives:
         - path: "/data[at0002]/events[at0003]"

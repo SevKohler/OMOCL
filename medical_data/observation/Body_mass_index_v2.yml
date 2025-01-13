@@ -13,16 +13,19 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4245997
+        - code: 4245997 # Body mass index
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body mass index 
     unit:
       alternatives: *valueAlternatives
+        - conceptMap:
+          kg/m2: 9531
+          [lb_av]/[in_i]2: 9389 # (Should be [psi] or [lbf_av]/[in_i]2)
     range_low:
       optional: true
       alternatives: *valueAlternatives

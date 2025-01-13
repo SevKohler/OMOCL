@@ -13,7 +13,7 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 40483383
+        - code: 35621967 # CSHA (Canadian Study of Health and Aging) Clinical Frailty Scale score
     measurement_date:
       alternatives:
         - path: "../context"

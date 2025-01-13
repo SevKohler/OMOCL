@@ -16,11 +16,11 @@ mappings:
         - code: 3036277
     measurement_date:
       alternatives:
-        - path: "/data[at0001]/events[at0003]"
+        - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Height/Length
     unit:
       alternatives: *valueAlternatives
     range_low:

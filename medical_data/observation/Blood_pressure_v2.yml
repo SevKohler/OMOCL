@@ -19,7 +19,7 @@ mappings:
         - path: "data[at0001]/events[at0006]"
     value:
       alternatives: &valueAlternatives1
-        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0004]"
+        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0004]" # Systolic 
     unit:
       alternatives:
         - code: 8876
@@ -42,7 +42,7 @@ mappings:
         - path: "data[at0001]/events[at0006]"
     value:
       alternatives: &valueAlternatives2
-        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0005]"
+        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0005]" # Diastolic
     unit:
       alternatives:
         - code: 8876
