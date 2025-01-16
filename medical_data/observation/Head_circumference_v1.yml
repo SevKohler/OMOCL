@@ -13,13 +13,13 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4181669
+        - code: 4181669 # Head circumference 
     measurement_date:
       alternatives:
         - path: "data[at0001]/events[at0010]"
     value:
       alternatives: &valueAlternatives1
-        - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]"
+        - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]" # Head circumference 
     unit:
       alternatives:
         - path: *valueAlternatives1

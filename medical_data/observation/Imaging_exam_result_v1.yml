@@ -1,0 +1,44 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Imaging_exam_result_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.imaging_exam_result.v1
+
+mappings:
+#Imaging diagnosis and Imaging differential diagnosis are mutually exclusive in archetype
+  - type: "ConditionOccurrence"
+    concept_id:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0058]" # Imaging differential diagnosis 
+    condition_start_date:
+      alternatives:
+        #Study date, Any event, or get from reference model context
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0070]"
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    condition_end_date:
+      optional: true
+      alternatives:
+        #Date/time of resolution (optional)
+        - path: "../context"
+
+  - type: "ConditionOccurrence"
+    concept_id:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0020]" # Imaging diagnosis 
+    condition_start_date:
+      alternatives:
+        #Study date, Any event, or get from reference model context
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0070]"
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    condition_end_date:
+      optional: true
+      alternatives:
+        #Date/time of resolution (optional)
+        - path: "../context"

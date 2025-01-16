@@ -1,0 +1,167 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Hirsutism_scales_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.hirsutism_scales.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4200651 # Hirsutism score [SNOMED-CT::302094007]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0079]" # Total score 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4201713 # Upper lip hair score [SNOMED-CT::302095008]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Upper lip hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4201386 # Chin hair score [SNOMED-CT::302096009]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0019]" # Chin hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4199565 # Sideburn hair score [SNOMED-CT::302097000]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0082]" # Sideburn hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4200652 # Chest hair score [SNOMED-CT::302098005]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0025]" # Chest hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4201714 # Upper back hair score [SNOMED-CT::302101009]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0031]" # Upper back hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4200653 # Lower back hair score [SNOMED-CT::302102002]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0037]" # Lower back hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4199566 # Upper abdomen hair score [SNOMED-CT::302099002]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0043]" # Upper abdomen hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4199567 # Lower abdomen hair score [SNOMED-CT::302100005]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0049]" # Lower abdomen hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4201715 # Upper arm hair score [SNOMED-CT::302103007]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0055]" # Upper arm hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4200654 # Lower arm hair score [SNOMED-CT::302104001]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0061]" # Lower arm hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4199568 # Thigh hair score [SNOMED-CT::302105000]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0067]" # Thigh hair
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4201716 # Lower leg hair score [SNOMED-CT::302106004]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0073]" # Lower leg hair
