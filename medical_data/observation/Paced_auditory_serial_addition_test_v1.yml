@@ -1,0 +1,41 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Paced_auditory_serial_addition_test_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.paced_auditory_serial_addition_test.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4151973 # Paced auditory serial addition test [SNOMED-CT::311484000]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0064]" # PASAT-3''
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0002]/events[at0064]/data[at0001]/items[at0015]" # Total Correct Answers
+    qualifier:
+      alternatives:
+        - code: 45879330 # Three [LOINC::LA6395-3] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4151973 # Paced auditory serial addition test [SNOMED-CT::311484000]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0065]" # PASAT-2''
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0002]/events[at0065]/data[at0001]/items[at0015]" # Total Correct Answers
+    qualifier:
+      alternatives:
+        - code: 45884972 # Two [LOINC::LA6404-3] 
