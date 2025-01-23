@@ -7,13 +7,13 @@ spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
   openEhrConfig:
-    archetype: openEHR-EHR-OBSERVATION.pregnancy_status.v0
+    archetype: openEHR-EHR-Evaluation.pregnancy_status.v0
 
 mappings:
   - type: "Observation"
     concept_id:
       alternatives:
-        - code: 42528957
+        - code: 42528957 # 	Pregnancy status [LOINC::82810-3]
     observation_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]/data[at0003]"
