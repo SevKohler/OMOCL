@@ -1,0 +1,97 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Nine_hole_peg_test_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.nine_hole_peg_test.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4165291 # Nine hole peg test [SNOMED-CT::273648008]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0074]" # Dominant Hand - Trial 1
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives1
+        - path: "/data[at0001]/events[at0074]/data[at0003]/items[at0017]" # Total time
+    unit:
+      alternatives: *valueAlternatives1
+        - code: 8555 # seconds
+    qualifier:
+      alternatives:
+        - code: 4118850 # Dominant side [SNOMED-CT::262379005] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4165291 # Nine hole peg test [SNOMED-CT::273648008]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0075]" # Dominant Hand - Trial 2
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives2
+        - path: "/data[at0001]/events[at0075]/data[at0003]/items[at0017]" # Total time
+    unit:
+      alternatives: *valueAlternatives2
+        - code: 8555 # seconds
+    qualifier:
+      alternatives:
+        - code: 4118850 # Dominant side [SNOMED-CT::262379005] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4165291 # Nine hole peg test [SNOMED-CT::273648008]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0076]" # Non-dominant Hand - Trial 1
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives3
+        - path: "/data[at0001]/events[at0076]/data[at0003]/items[at0017]" # Total time
+    unit:
+      alternatives: *valueAlternatives3
+        - code: 8555 # seconds
+    qualifier:
+      alternatives:
+        - code: 4096182 # Non-dominant side [SNOMED-CT::262458006] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4165291 # Nine hole peg test [SNOMED-CT::273648008]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0077]" # Non-dominant Hand - Trial 2
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives4
+        - path: "/data[at0001]/events[at0077]/data[at0003]/items[at0017]" # Total time
+    unit:
+      alternatives: *valueAlternatives4
+        - code: 8555 # seconds
+    qualifier:
+      alternatives:
+        - code: 4096182 # Non-dominant side [SNOMED-CT::262458006] 
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4118850 # Dominant side [SNOMED-CT::262379005] (Dominant hand [SNOMED-CT::263557007] is not standard in OMOP)
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0074]" # Dominant Hand - Trial 1
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: "/protocol[at0008]/items[at0083]" # Dominant Hand
+          at0085: 4141311 # Right hand dominant --> Right sided [SNOMED-CT::264180000]
+          at0086: 4137157 # Left  hand dominant --> Left sided [SNOMED-CT::263795004]

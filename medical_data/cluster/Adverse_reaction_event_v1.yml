@@ -1,0 +1,25 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Adverse_reaction_event_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.adverse_reaction_event.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 43530807 #Allergic disposition [SNOMED-CT::609328004] 
+    observation_date:
+      alternatives:
+        - path: "/items[at0008]" #Onset of reaction 
+        - path: "/items[at0015]" #Initial exposure
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0001]" #Specific substance 

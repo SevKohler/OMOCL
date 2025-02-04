@@ -1,0 +1,29 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Asa_status_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.asa_status.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4199571 # American Society of Anesthesiologists physical status class [SNOMED-CT::273270000]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0015]/events[at0016]"
+        - path: "."
+    value:
+      alternatives: 
+        - conceptMap: "/data[at0015]/events[at0016]/data[at0017]/items[at0001]" # Classification
+          at0003: 4119373 # ASA 1 --> Class 1 [SNOMED-CT::258392002]
+          at0004: 4120210 # ASA 2 --> Class 2 [SNOMED-CT::258393007]
+          at0005: 4123169 # ASA 3 --> Class 3 [SNOMED-CT::258394001]
+          at0006: 4131479 # ASA 4 --> Class 4 [SNOMED-CT::264750004]
+          at0007: 4080722 # ASA 5 --> Class 5 [SNOMED-CT::277970007]
+          at0008: 4130868 # ASA 6 --> Class 6 [SNOMED-CT::264751000]

@@ -1,0 +1,23 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Ctcae_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.ctcae.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: "/items[at0002]"
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - path: "/items[at0003]"

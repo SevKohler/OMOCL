@@ -1,0 +1,173 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Urinalysis_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.urinalysis.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3020650 # Glucose [Presence] in Urine [LOINC::2349-9] 
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0050]" # Glucose 
+          at0115: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0116: 9192 # Trace --> Trace [SNOMED-CT::260405006]
+          at0117: 45878548 # 1+ --> 1+ [LOINC::LA11841-6] 
+          at0118: 45881916 # 2+ --> 2+ [LOINC::LA11842-4]
+          at0119: 45876467 # 3+ --> 3+ [LOINC::LA11843-2] 
+          at0120: 45881623 # 4+ --> 4+ [LOINC::LA11844-0] 
+ 
+ - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 40761551 # Bilirubin [Presence] in Urine by Confirmatory method [LOINC::58450-8]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0062]" # Bilirubin 
+          at0121: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0122: 45878548 # 1+ --> 1+ [LOINC::LA11841-6] 
+          at0123: 45881916 # 2+ --> 2+ [LOINC::LA11842-4]
+          at0124: 45876467 # 3+ --> 3+ [LOINC::LA11843-2] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3028893 # Ketones [Presence] in Urine [LOINC::33903-6]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0037]" # Ketones 
+          at0109: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0110: 9192 # Trace --> Trace [SNOMED-CT::260405006]
+          at0111: 45881797 # Small --> Small [LOINC::LA8983-4] 
+          at0112: 45877983 # Moderate --> Moderate [LOINC::LA6751-7]
+          at0113: 45878584 # Large --> Large [LOINC::LA8981-8] 
+          at0114: 0 # Large+ --> No map. Loinc codes only up to Large 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3033543 # Specific gravity of Urine [LOINC::2965-2]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0151]" # Specific gravity
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3051227 # Blood [Presence] in Urine by Visual [LOINC::53963-5]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0032]" # Blood
+          at0102: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0103: 9192 # Non-haemolysed Trace --> Trace [SNOMED-CT::260405006], add qualifier Sample not visibly hemolyzed 4083200
+          at0104: 45877983 # Non-haemolysed Moderate --> Moderate [LOINC::LA6751-7], add qualifier Sample not visibly hemolyzed 4083200
+          at0105: 9192 # Haemolysed Trace --> Trace [SNOMED-CT::260405006], add qualifier Sample hemolyzed 4039371
+          at0106: 45878548 # 1+ --> 1+ [LOINC::LA11841-6] 
+          at0107: 45881916 # 2+ --> 2+ [LOINC::LA11842-4]
+          at0108: 45876467 # 3+ --> 3+ [LOINC::LA11843-2] 
+    qualifier:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0032]" # Blood
+          at0103: 4083200 # Non-haemolysed Trace --> Sample not visibly hemolyzed 4083200 [SNOMED-CT::281283002]
+          at0104: 4083200 # Non-haemolysed Moderate --> Sample not visibly hemolyzed 4083200 [SNOMED-CT::281283002]
+          at0105: 4039371 # Haemolysed Trace --> Sample hemolyzed 4039371 [SNOMED-CT::118128002]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3015736 # pH of Urine [LOINC::2756-5] 
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0126]" # pH 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3037185 # Protein [Presence] in Urine [LOINC::2887-8] 
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0095]" # Protein
+          at0096: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0097: 9192 # Trace --> Trace [SNOMED-CT::260405006]
+          at0098: 45878548 # 1+ --> 1+ [LOINC::LA11841-6] 
+          at0099: 45881916 # 2+ --> 2+ [LOINC::LA11842-4]
+          at0100: 45876467 # 3+ --> 3+ [LOINC::LA11843-2] 
+          at0101: 45881623 # 4+ --> 4+ [LOINC::LA11844-0] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3016360 # Urobilinogen [Presence] in Urine [LOINC::13658-0]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0056]" # Urobilinogen
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3042812 # Nitrite [Presence] in Urine [LOINC::32710-6]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0043]" # Nitrite
+          at0159: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0160: 9191 # Positive --> Positive [SNOMED-CT::10828004]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3045414 # Leukocytes [Presence] in Urine [LOINC::33052-2]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Point in time
+        - path: "."
+    value:
+      alternatives:
+        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0068]" # Leukocytes
+          at0135: 9189 # Negative --> Negative [SNOMED-CT::260385009] 
+          at0136: 9192 # Trace --> Trace [SNOMED-CT::260405006]
+          at0137: 45878548 # 1+ --> 1+ [LOINC::LA11841-6] 
+          at0138: 45881916 # 2+ --> 2+ [LOINC::LA11842-4]
+          at0139: 45876467 # 3+ --> 3+ [LOINC::LA11843-2] 

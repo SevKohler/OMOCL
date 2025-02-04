@@ -1,0 +1,25 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name:  Item_transport_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.item_transport.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 0 #Potentially could be 4213718 Cargo handling. Not relevant for research in any case
+    observation_date:
+      alternatives:
+        - path: "/items[at0007]" #Delivery date/time
+        - path: "/items[at0004]" #Pick up date/time 
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - path: "/items[at0028]" #Item transported 

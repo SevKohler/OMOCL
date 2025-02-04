@@ -1,11 +1,20 @@
-archetype_id: "openEHR-EHR-OBSERVATION.respiration.v2"
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Respiration_v2
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.respiration.v2
 
 mappings:
   - type: "Measurement"
     base_path: "/data[at0001]/events[at0002]"
     concept_id:
       alternatives:
-        - code: 4154772
+        - code: 4154772 # Rate of spontaneous respiration [SNOMED-CT::271625008]
     measurement_date:
       alternatives:
         - path: "."
