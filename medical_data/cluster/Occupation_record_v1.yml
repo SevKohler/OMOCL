@@ -17,7 +17,7 @@ mappings:
     observation_date:
       alternatives:
         - path: "../../"
-        - path: "../../../../../context""
+        - path: "../../../../../context"
     value:
       alternatives: 
         - path: "/items[at0005]" #Job title/role 

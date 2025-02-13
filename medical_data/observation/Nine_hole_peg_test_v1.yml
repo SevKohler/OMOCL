@@ -19,10 +19,11 @@ mappings:
         - path: "/data[at0001]/events[at0074]" # Dominant Hand - Trial 1
         - path: "../context"
     value:
-      alternatives: &valueAlternatives1
+      alternatives: 
         - path: "/data[at0001]/events[at0074]/data[at0003]/items[at0017]" # Total time
     unit:
-      alternatives: *valueAlternatives1
+      alternatives: 
+        - path: "/data[at0001]/events[at0074]/data[at0003]/items[at0017]" # Total time
         - code: 8555 # seconds
     qualifier:
       alternatives:
@@ -37,10 +38,11 @@ mappings:
         - path: "/data[at0001]/events[at0075]" # Dominant Hand - Trial 2
         - path: "../context"
     value:
-      alternatives: &valueAlternatives2
+      alternatives: 
         - path: "/data[at0001]/events[at0075]/data[at0003]/items[at0017]" # Total time
     unit:
-      alternatives: *valueAlternatives2
+      alternatives: 
+        - path: "/data[at0001]/events[at0075]/data[at0003]/items[at0017]" # Total time
         - code: 8555 # seconds
     qualifier:
       alternatives:
@@ -55,10 +57,11 @@ mappings:
         - path: "/data[at0001]/events[at0076]" # Non-dominant Hand - Trial 1
         - path: "../context"
     value:
-      alternatives: &valueAlternatives3
+      alternatives: 
         - path: "/data[at0001]/events[at0076]/data[at0003]/items[at0017]" # Total time
     unit:
-      alternatives: *valueAlternatives3
+      alternatives:
+        - path: "/data[at0001]/events[at0076]/data[at0003]/items[at0017]" # Total time
         - code: 8555 # seconds
     qualifier:
       alternatives:
@@ -73,10 +76,11 @@ mappings:
         - path: "/data[at0001]/events[at0077]" # Non-dominant Hand - Trial 2
         - path: "../context"
     value:
-      alternatives: &valueAlternatives4
+      alternatives:
         - path: "/data[at0001]/events[at0077]/data[at0003]/items[at0017]" # Total time
     unit:
-      alternatives: *valueAlternatives4
+      alternatives: 
+        - path: "/data[at0001]/events[at0077]/data[at0003]/items[at0017]" # Total time
         - code: 8555 # seconds
     qualifier:
       alternatives:

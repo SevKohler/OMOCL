@@ -22,10 +22,11 @@ mappings:
       alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body mass index 
     unit:
-      alternatives: *valueAlternatives
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body mass index 
         - conceptMap:
           kg/m2: 9531
-          [lb_av]/[in_i]2: 9389 # (Should be [psi] or [lbf_av]/[in_i]2)
+          "[lb_av]/[in_i]2": 9389 # (Should be [psi] or [lbf_av]/[in_i]2)
     range_low:
       optional: true
       alternatives: *valueAlternatives

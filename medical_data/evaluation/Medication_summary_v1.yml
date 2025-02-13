@@ -26,6 +26,7 @@ mappings:
         - path: "."
     quantity:
       optional: true
+      alternatives:
         - path: "/data[at0001]/items[at0015]" # Cumulative dose 
 
 #Could be done per episode for a more granular approach. drug_concept_id would still come from Medication name,

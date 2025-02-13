@@ -6,7 +6,8 @@ metadata:
 spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
-  openEhrConfig: archetype:openEHR-EHR-OBSERVATION.apgar.v2
+  openEhrConfig: 
+    archetype: openEHR-EHR-OBSERVATION.apgar.v2
 
 mappings:
   - type: "Measurement"

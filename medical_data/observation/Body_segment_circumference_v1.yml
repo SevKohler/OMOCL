@@ -26,7 +26,8 @@ mappings:
       alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Area
     unit:
-      alternatives: *valueAlternatives
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Area
         - conceptMap:
           in: 8533
           cm: 8582 

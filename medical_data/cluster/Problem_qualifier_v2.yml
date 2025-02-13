@@ -21,7 +21,7 @@ mappings: #part of Evaluation problem/diagnosis
     value:
       alternatives:
         - path: "/items[at0004]" #Diagnostic status
-		
+
   - type: "Observation"
     concept_id:
       alternatives:

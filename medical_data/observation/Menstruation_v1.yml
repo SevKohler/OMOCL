@@ -35,7 +35,7 @@ mappings:
     unit:
       alternatives:
         - code: 8512 # day
-		
+
   - type: "Observation"
     concept_id:
       alternatives:

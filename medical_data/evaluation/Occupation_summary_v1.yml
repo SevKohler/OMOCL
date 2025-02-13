@@ -13,7 +13,7 @@ mappings:
   - type: "Observation"
     concept_id:
       alternatives:
-        - code: : 4073163 # Employment status [SNOMED-CT::224362002]
+        - code: 4073163 # Employment status [SNOMED-CT::224362002]
     observation_date:
       alternatives:
         - path: "../context"

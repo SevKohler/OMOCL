@@ -19,10 +19,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives1
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Crown-rump length (CRL)
     unit:
-      alternatives: *valueAlternatives1
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Crown-rump length (CRL)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -37,10 +38,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives2
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Biparietal diameter (BPD)
     unit:
-      alternatives: *valueAlternatives2
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" 
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -55,10 +57,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives3
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Occipito-frontal diameter (OFD)
     unit:
-      alternatives: *valueAlternatives3
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Occipito-frontal diameter (OFD)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -73,10 +76,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives4
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Head circumference (HC)
     unit:
-      alternatives: *valueAlternatives4
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Head circumference (HC)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -91,10 +95,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives5
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0009]" # Trans-cerebellar diameter (TCD)
     unit:
-      alternatives: *valueAlternatives5
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0009]" # Trans-cerebellar diameter (TCD)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -111,10 +116,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives6
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]" # Binocular distance (BOD)
     unit:
-      alternatives: *valueAlternatives6
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]" # Binocular distance (BOD)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -129,10 +135,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives7
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0012]" # Abdominal circumference (AC)
     unit:
-      alternatives: *valueAlternatives7
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0012]" # Abdominal circumference (AC)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -147,10 +154,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives8
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0013]" # Femur length (FL)
     unit:
-      alternatives: *valueAlternatives8
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0013]" # Femur length (FL)
         - conceptMap:
           mm: 8588
           cm: 8582
@@ -165,10 +173,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "../context" 
     value: 
-      alternatives: &valueAlternatives9
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]" # Humeral length (HL)
     unit:
-      alternatives: *valueAlternatives9
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]" # Humeral length (HL)
         - conceptMap:
           mm: 8588
           cm: 8582

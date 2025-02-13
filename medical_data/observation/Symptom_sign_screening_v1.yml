@@ -7,7 +7,7 @@ spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
   openEhrConfig:
-    archetype:openEHR-EHR-OBSERVATION.symptom_sign_screening.v1
+    archetype: openEHR-EHR-OBSERVATION.symptom_sign_screening.v1
 
 mappings:
   - type: "Observation"
