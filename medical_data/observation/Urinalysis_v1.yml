@@ -28,7 +28,7 @@ mappings:
           at0119: 45876467 # 3+ --> 3+ [LOINC::LA11843-2] 
           at0120: 45881623 # 4+ --> 4+ [LOINC::LA11844-0] 
  
- - type: "Measurement"
+  - type: "Measurement"
     concept_id:
       alternatives:
         - code: 40761551 # Bilirubin [Presence] in Urine by Confirmatory method [LOINC::58450-8]

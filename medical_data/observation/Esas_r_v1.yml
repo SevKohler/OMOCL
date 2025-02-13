@@ -145,7 +145,7 @@ mappings:
       alternatives:
         - code: 4234650 # Personal wellbeing status [SNOMED-CT::405153007]
  
- - type: "Measurement"
+  - type: "Measurement"
     concept_id:
       alternatives:
         - code: 42873028 # Edmonton symptom assessment system

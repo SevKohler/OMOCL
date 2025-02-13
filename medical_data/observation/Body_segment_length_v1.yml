@@ -7,7 +7,7 @@ spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
   openEhrConfig:
-    archetype: openEHR-EHR-OBSERVATION.body_segment_length.v1"
+    archetype: openEHR-EHR-OBSERVATION.body_segment_length.v1
 
 mappings:
   - type: "Measurement"
@@ -34,7 +34,8 @@ mappings:
       alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Length
     unit:
-      alternatives: *valueAlternatives
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Length
         - conceptMap:
           in: 8533
           cm: 8582 

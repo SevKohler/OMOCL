@@ -45,7 +45,7 @@ mappings:
         - path: "/items[at0052]" #FiO2 
     unit:
       alternatives: *valueAlternatives1
-     range_low:
+    range_low:
       optional: true
       alternatives: *valueAlternatives1
     range_high:
@@ -67,7 +67,8 @@ mappings:
       alternatives: &valueAlternatives2
         - path: "/items[at0053]" #Percent O2 
     unit:
-      alternatives: *valueAlternatives2
+      alternatives: 
+        - path: "/items[at0053]" #Percent O2 
         - code: 9230 #%{oxygen}
     range_low:
       optional: true

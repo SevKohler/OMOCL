@@ -18,7 +18,7 @@ mappings:
       alternatives:
         - path: "/data[at0001]/events[at0002]" # Day shift event
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0017]" # Total score
 
   - type: "Observation"
@@ -29,9 +29,9 @@ mappings:
       alternatives:
         - path: "/data[at0001]/events[at0088]" # Evening shift event
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0088]/data[at0003]/items[at0017]" # Total score
-		
+    
   - type: "Observation"
     concept_id:
       alternatives:
@@ -40,9 +40,9 @@ mappings:
       alternatives:
         - path: "/data[at0001]/events[at0113]" # Night shift event
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0113]/data[at0003]/items[at0017]" # Total score
-		
+    
   - type: "Observation"
     concept_id:
       alternatives:
@@ -51,5 +51,5 @@ mappings:
       alternatives:
         - path: "/data[at0001]/events[at0138]" # Any event
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0138]/data[at0003]/items[at0017]" # Total score

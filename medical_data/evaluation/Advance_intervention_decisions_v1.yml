@@ -32,4 +32,3 @@ mappings:
           at0005: 4161275 # Supportive --> Supportive - procedure intent [SNOMED-CT::399707004]
           at0006: 4179711 # Terminal --> Palliative intent [SNOMED-CT::363676003]
           at0007: 4129922 # Unknown -->  Unknown [SNOMED-CT::261665006]
-		

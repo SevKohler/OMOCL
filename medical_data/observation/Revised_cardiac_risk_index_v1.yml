@@ -7,7 +7,7 @@ spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
   openEhrConfig:
-    archetype:openEHR-EHR-OBSERVATION.revised_cardiac_risk_index.v1
+    archetype: openEHR-EHR-OBSERVATION.revised_cardiac_risk_index.v1
 
 mappings:
   - type: "Measurement"

@@ -19,10 +19,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives1
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Total input
     unit:
-      alternatives: *valueAlternatives1
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Total input
         - conceptMap:
           ml: 8587
           l: 8519 
@@ -37,10 +38,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives2
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Total output
     unit:
-      alternatives: *valueAlternatives2
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Total output
         - conceptMap:
           ml: 8587
           l: 8519 
@@ -55,10 +57,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives3
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Insensible loss
     unit:
-      alternatives: *valueAlternatives3
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Insensible loss
         - conceptMap:
           ml: 8587
           l: 8519 
@@ -73,10 +76,11 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives4
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Fluid balance
     unit:
-      alternatives: *valueAlternatives4
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Fluid balance
         - conceptMap:
           ml: 8587
           l: 8519 

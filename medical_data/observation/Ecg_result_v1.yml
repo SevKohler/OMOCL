@@ -19,7 +19,7 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0101]" # Finding
 
   - type: "Measurement"
@@ -31,7 +31,7 @@ mappings:
         - path: "/data[at0001]/events[at0002]" 
         - path: "."
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0020]" # P axis
 
   - type: "Measurement"
@@ -43,7 +43,7 @@ mappings:
         - path: "/data[at0001]/events[at0002]" 
         - path: "."
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0022]" # T axis
 
   - type: "Measurement"
@@ -55,5 +55,5 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0021]" # QRS axis
