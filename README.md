@@ -20,10 +20,10 @@ For a engine to execute the mappings see [Eos](https://github.com/SevKohler/Eos)
 
 77.5%
 ████████▒▒
+*counting published archetypes from the international ckm*
 
 The missing archetypes are not transformable into OMOP in a useful way, please check the documentation/ for more information. 
 Status 13.02.2025
-*counting published archetypes from the international ckm*
 
 For the caluculation and overview of what is mapped see:
 https://github.com/SevKohler/OMOCLComparsionScript
