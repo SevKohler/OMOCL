@@ -20,6 +20,7 @@ For a engine to execute the mappings see [Eos](https://github.com/SevKohler/Eos)
 
 85.93%
 █████████▒
+
 *counting published archetypes from the international ckm*
 
 The missing archetypes are not transformable into OMOP in a useful way, please check the documentation/ for more information. 
