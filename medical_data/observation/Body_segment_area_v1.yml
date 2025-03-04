@@ -1,0 +1,40 @@
+engine: EOS/v0.0.62
+type: model
+metadata:
+  name: Body_segment_area_v1
+  version: 0.0.1-alpha 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.body_segment_area.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 0 # no code for body segment area
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Area
+    unit:
+      alternatives: *valueAlternatives
+        - conceptMap:
+          mm2: 9572
+          cm2: 9483 
+          [sin_i]: 9404 
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives
+
+#No qualifier_concept_id in Measurement means that interesting archetype paths such as Laterality or Body segment name cannot be applied
