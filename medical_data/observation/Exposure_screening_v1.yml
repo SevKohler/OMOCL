@@ -14,7 +14,7 @@ mappings:
     concept_id:
       alternatives:
         - code: 4096560 # Exposure to
-    measurement_date:
+    observation_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."

@@ -19,27 +19,31 @@ mappings:
         - path: "../context"
     value:
       alternatives: 
-        - conceptMap: "/data[at0001]/items[at0029]/items[at0151]" # Type 
-          at0155: 4149367 # Combination pill [SNOMED-CT::268458002]
-          at0157: 4061668 # Progestogen-only pill [SNOMED-CT::169467008]
-          at0156: 765426 # Combination skin patch [SNOMED-CT::450881000124106]
-          at0158: 46271351 # Depot progestogen injection [SNOMED-CT::709457002]
-          at0159: 3661581 # Hormone implant [SNOMED-CT::860691008]
-          at0160: 42872855 # Vaginal ring [SNOMED-CT::450850003]
-          at0169: 40492989 # IUD with hormone [SNOMED-CT::449038007]
-          at0163: 4207158 # IUD without hormone [SNOMED-CT::312081001] (not specifically without hormone)
-          at0161: 4246185 # Female sterilisation [SNOMED-CT::60890002]
-          at0162: 4163273 # Male sterilisation [SNOMED-CT::399141000]
-          at0154: 4069548 # Diaphragm [SNOMED-CT::20359006]
-          at0167: 4036554 # Vaginal douching [SNOMED-CT::228483001]
-          at0153: 37165062 # Female condom [SNOMED-CT::1237408007]
-          at0152: 4077524 # Male condom [SNOMED-CT::275831001]
-          at0164: 4059972 # Withdrawal [SNOMED-CT::169513000]
-          at0165: 765686 # Fertility awareness method [SNOMED-CT::455501000124105]
-          at0166: 4012376 # Abstinence [SNOMED-CT::162171002] Currently not sexually active (non-standard codes such as “sexual abstinence” are mapped to this one)
+        - conceptMap: 
+            path: "/data[at0001]/items[at0029]/items[at0151]" # Type 
+            mapping:
+              at0155: 4149367 # Combination pill [SNOMED-CT::268458002]
+              at0157: 4061668 # Progestogen-only pill [SNOMED-CT::169467008]
+              at0156: 765426 # Combination skin patch [SNOMED-CT::450881000124106]
+              at0158: 46271351 # Depot progestogen injection [SNOMED-CT::709457002]
+              at0159: 3661581 # Hormone implant [SNOMED-CT::860691008]
+              at0160: 42872855 # Vaginal ring [SNOMED-CT::450850003]
+              at0169: 40492989 # IUD with hormone [SNOMED-CT::449038007]
+              at0163: 4207158 # IUD without hormone [SNOMED-CT::312081001] (not specifically without hormone)
+              at0161: 4246185 # Female sterilisation [SNOMED-CT::60890002]
+              at0162: 4163273 # Male sterilisation [SNOMED-CT::399141000]
+              at0154: 4069548 # Diaphragm [SNOMED-CT::20359006]
+              at0167: 4036554 # Vaginal douching [SNOMED-CT::228483001]
+              at0153: 37165062 # Female condom [SNOMED-CT::1237408007]
+              at0152: 4077524 # Male condom [SNOMED-CT::275831001]
+              at0164: 4059972 # Withdrawal [SNOMED-CT::169513000]
+              at0165: 765686 # Fertility awareness method [SNOMED-CT::455501000124105]
+              at0166: 4012376 # Abstinence [SNOMED-CT::162171002] Currently not sexually active (non-standard codes such as “sexual abstinence” are mapped to this one)
     qualifier:
       alternatives: 
-        - conceptMap: "/data[at0001]/items[at0089]" # Overall status
-          at0003: 4034855 # Current user --> Current [SNOMED-CT::15240007]
-          at0005: 4132507 # Not current user --> Past [SNOMED-CT::410513005]
-          at0006: 763692 # Never user --> Never [SNOMED-CT::444841000124107]
+        - conceptMap: 
+            path: "/data[at0001]/items[at0089]" # Overall status
+            mapping:
+              at0003: 4034855 # Current user --> Current [SNOMED-CT::15240007]
+              at0005: 4132507 # Not current user --> Past [SNOMED-CT::410513005]
+              at0006: 763692 # Never user --> Never [SNOMED-CT::444841000124107]

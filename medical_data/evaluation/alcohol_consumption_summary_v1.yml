@@ -21,10 +21,12 @@ mappings:
         - path: "../context"
     value:
       alternatives:
-        - conceptMap: "/data[at0001]/items[at0089]" # Overall status 
-          at0003: 4074035 # Current drinker [SNOMED-CT::219006]
-          at0005: 35810395 # Former alcohol drinker [UK biobank]
-          at0006: 4022664 # Non – drinker [SNOMED-CT::105542008]
+        - conceptMap: 
+            path: "/data[at0001]/items[at0089]" # Overall status 
+            mapping:
+              at0003: 4074035 # Current drinker [SNOMED-CT::219006]
+              at0005: 35810395 # Former alcohol drinker [UK biobank]
+              at0006: 4022664 # Non – drinker [SNOMED-CT::105542008]
 
   - type: "Observation"
     concept_id:
@@ -37,8 +39,7 @@ mappings:
       alternatives: &valueAlternatives1
         - path: "/data[at0001]/items[at0064]/items[at0023]" # Typical consumption (alcohol units)
     unit:
-      alternatives:
-        - path: *valueAlternatives1
+      alternatives: *valueAlternatives1
 
   - type: "Observation"
     concept_id:

@@ -13,7 +13,7 @@ mappings:
   - type: "ConditionOccurrence"
     concept_id:
       alternatives:
-        - code: "/data[at0001]/items[at0003]/items[at0004]" #Diagnosis name
+        - path: "/data[at0001]/items[at0003]/items[at0004]" #Diagnosis name
     condition_start_date:
       alternatives:
         - path: "../context"

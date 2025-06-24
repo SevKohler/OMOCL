@@ -18,11 +18,7 @@ mappings:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
     value:
-      alternatives: 
+      alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
-        - conceptMap:
-          a_j: 9450
-          yr: 9448 
+      alternatives: *valueAlternatives

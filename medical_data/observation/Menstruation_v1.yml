@@ -47,6 +47,8 @@ mappings:
         - path: "../context"
     value:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0013]" # Blood clots 
-          at0014: 4181412 # Present [SNOMED-CT::52101004]
-          at0015: 4132135 # Absent [SNOMED-CT::2667000]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0013]" # Blood clots 
+            mapping:
+              at0014: 4181412 # Present [SNOMED-CT::52101004]
+              at0015: 4132135 # Absent [SNOMED-CT::2667000]

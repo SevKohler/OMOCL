@@ -20,12 +20,16 @@ mappings:
         - path: "../context"
     value:
       alternatives: 
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]" # Context
-          at0048: 4139934 # Homeless [SNOMED-CT::32911000]
-          at0049: 4151762 # Interpreter needed [SNOMED-CT::315594003]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]" # Context
+            mapping:
+              at0048: 4139934 # Homeless [SNOMED-CT::32911000]
+              at0049: 4151762 # Interpreter needed [SNOMED-CT::315594003]
     qualifier:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]" # Presence?
-          at0031: 4188539 # Yes --> Yes [SNOMED-CT::373066001]
-          at0032: 4188540 # No --> No [SNOMED-CT::373067005]
-          at0033: 4129922 # Unknown --> Unknown [SNOMED-CT::261665006]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]" # Presence?
+            mapping:
+              at0031: 4188539 # Yes --> Yes [SNOMED-CT::373066001]
+              at0032: 4188540 # No --> No [SNOMED-CT::373067005]
+              at0033: 4129922 # Unknown --> Unknown [SNOMED-CT::261665006]

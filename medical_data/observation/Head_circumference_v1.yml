@@ -21,8 +21,7 @@ mappings:
       alternatives: &valueAlternatives1
         - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]" # Head circumference 
     unit:
-      alternatives:
-        - path: *valueAlternatives1
+      alternatives: *valueAlternatives1
     range_low:
       optional: true
       alternatives: *valueAlternatives1

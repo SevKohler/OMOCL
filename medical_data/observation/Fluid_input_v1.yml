@@ -19,15 +19,10 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: 
+      alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0035]" # Volume
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0035]" # Volume
-        - conceptMap:
-          ml: 8587
-          l: 8519 
-          fl oz: 4086541  
+      alternatives: *valueAlternatives
 
   - type: "Observation"
     concept_id:

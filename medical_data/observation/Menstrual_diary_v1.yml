@@ -20,13 +20,15 @@ mappings:
         - path: "../context"
     value:
       alternatives: 
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Flow 
-          at0005: 4302555 # Flooding --> Menorrhagia [SNOMED-CT::386692008] (synonyms, Flooding during periods, Hypermenorrhoea, Heavy period)
-          at0005: 4302555 # Heavy flow --> Menorrhagia [SNOMED-CT::386692008] (Heavy menstrual period was remmaped to menorrhagia too)
-          at0005: 4203885 # Medium flow --> Normal menstrual blood loss [SNOMED-CT::308550003] (Average blood loss during periods is mapped to this)
-          at0005: 4275882 # Light flow --> Hypomenorrhea [SNOMED-CT::64206003]
-          at0005: 4238113 # Spotting --> Menstrual spotting [SNOMED-CT::9126005]
-          at0022: 605879 # No bleeding --> No bleeding [SNOMED-CT::1141705002]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Flow 
+            mapping:
+              at0005: 4302555 # Flooding --> Menorrhagia [SNOMED-CT::386692008] (synonyms, Flooding during periods, Hypermenorrhoea, Heavy period)
+              at0005: 4302555 # Heavy flow --> Menorrhagia [SNOMED-CT::386692008] (Heavy menstrual period was remmaped to menorrhagia too)
+              at0005: 4203885 # Medium flow --> Normal menstrual blood loss [SNOMED-CT::308550003] (Average blood loss during periods is mapped to this)
+              at0005: 4275882 # Light flow --> Hypomenorrhea [SNOMED-CT::64206003]
+              at0005: 4238113 # Spotting --> Menstrual spotting [SNOMED-CT::9126005]
+              at0022: 605879 # No bleeding --> No bleeding [SNOMED-CT::1141705002]
 
   - type: "Measurement"
     concept_id:
@@ -53,6 +55,8 @@ mappings:
         - path: "../context"
     value:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]" # Blood clots 
-          at0014: 4181412 # Present [SNOMED-CT::52101004]
-          at0015: 4132135 # Absent [SNOMED-CT::2667000]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]" # Blood clots 
+            mapping:
+              at0014: 4181412 # Present [SNOMED-CT::52101004]
+              at0015: 4132135 # Absent [SNOMED-CT::2667000]

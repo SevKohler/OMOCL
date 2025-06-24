@@ -19,16 +19,5 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
-    unit:
-      alternatives: *valueAlternatives
-    range_low:
-      optional: true
-      alternatives: *valueAlternatives
-    range_high:
-      optional: true
-      alternatives: *valueAlternatives
-    operator_concept_id:
-      optional: true
-      alternatives: *valueAlternatives

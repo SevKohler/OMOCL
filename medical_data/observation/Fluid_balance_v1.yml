@@ -19,15 +19,10 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: 
+      alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Total input
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Total input
-        - conceptMap:
-          ml: 8587
-          l: 8519 
-          fl oz: 4086541
+      alternatives: *valueAlternatives
 
   - type: "Measurement"
     concept_id:
@@ -38,15 +33,10 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: 
+      alternatives: &valueAlternatives1
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Total output
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Total output
-        - conceptMap:
-          ml: 8587
-          l: 8519 
-          fl oz: 4086541
+      alternatives: *valueAlternatives1
 
   - type: "Measurement"
     concept_id:
@@ -57,15 +47,10 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: 
+      alternatives: &valueAlternatives2
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Insensible loss
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Insensible loss
-        - conceptMap:
-          ml: 8587
-          l: 8519 
-          fl oz: 4086541
+      alternatives: *valueAlternatives2
 
   - type: "Observation"
     concept_id:
@@ -76,12 +61,7 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
-      alternatives: 
+      alternatives: &valueAlternatives3
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Fluid balance
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Fluid balance
-        - conceptMap:
-          ml: 8587
-          l: 8519 
-          fl oz: 4086541
+      alternatives: *valueAlternatives3

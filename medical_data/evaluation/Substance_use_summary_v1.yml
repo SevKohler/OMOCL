@@ -25,7 +25,9 @@ mappings:
         - path: "/data[at0001]/items[at0002]" # Substance name 
     qualifier:
       alternatives:
-        - conceptMap: "/data[at0001]/items[at0003]" # Overall status
-          at0004: 763692 # Never used --> Never [SNOMED-CT::444841000124107] 
-          at0005: 4034855 # Current user --> Current [SNOMED-CT::15240007] 
-          at0006: 4132507 # Former user --> Past [SNOMED-CT::410513005]
+        - conceptMap: 
+            path: "/data[at0001]/items[at0003]" # Overall status
+            mapping:
+              at0004: 763692 # Never used --> Never [SNOMED-CT::444841000124107] 
+              at0005: 4034855 # Current user --> Current [SNOMED-CT::15240007] 
+              at0006: 4132507 # Former user --> Past [SNOMED-CT::410513005]

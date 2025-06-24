@@ -13,7 +13,7 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: "/items[at0002]"
+        - path: "/items[at0002]"
     measurement_date:
       alternatives:
         - path: "../../"

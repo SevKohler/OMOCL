@@ -20,9 +20,11 @@ mappings:
     value:
       alternatives:
         - path: "/data[at0001]/items[at0003]" # Excluded concept if coded
-        - conceptMap: "/data[at0001]/items[at0003]/name" # Excluded concept (runtime constraint)
-          at0008: 4105886 # Adverse reaction substance --> Adverse reaction [SNOMED-CT::281647001]
-          at0005: 4167217 # Family problem/diagnosis --> Family history of clinical finding [SNOMED-CT::416471007] 
-          at0006: 44788358 # Medication --> Medication Record [SNOMED UK extension 163111000000100] 
-          at0004: 4234469 # Problem/diagnosis --> Diagnosis [SNOMED-CT::439401001]
-          at0007: 4322976 # Procedure --> Procedure [SNOMED-CT::71388002] 
+        - conceptMap: 
+            path: "/data[at0001]/items[at0003]/name" # Excluded concept (runtime constraint)
+            mapping:
+              at0008: 4105886 # Adverse reaction substance --> Adverse reaction [SNOMED-CT::281647001]
+              at0005: 4167217 # Family problem/diagnosis --> Family history of clinical finding [SNOMED-CT::416471007] 
+              at0006: 44788358 # Medication --> Medication Record [SNOMED UK extension 163111000000100] 
+              at0004: 4234469 # Problem/diagnosis --> Diagnosis [SNOMED-CT::439401001]
+              at0007: 4322976 # Procedure --> Procedure [SNOMED-CT::71388002] 

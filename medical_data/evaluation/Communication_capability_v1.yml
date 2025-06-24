@@ -19,4 +19,4 @@ mappings:
         - path: "../context"
     value:
       alternatives:
-        - path: "/data[at0001]/items[at0015]/items[at0003]" # Language
+        - path: "/data[at0001]/items[at0015]/items[openEHR-EHR-CLUSTER.language.v1]/items[at0001]" # Language name

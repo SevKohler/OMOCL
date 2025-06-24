@@ -22,11 +22,7 @@ mappings:
       alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]" # Hip circumference 
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]" # Hip circumference 
-        - conceptMap:
-          cm: 8582
-          in: 8533
+      alternatives: *valueAlternatives
     range_low:
       optional: true
       alternatives: *valueAlternatives

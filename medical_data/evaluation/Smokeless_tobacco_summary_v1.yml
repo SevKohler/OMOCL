@@ -26,7 +26,7 @@ mappings:
     concept_id:
       alternatives:
         - code: 4151768 # pack years
-    observation_date:
+    measurement_date:
       alternatives:
         - path: "../context"
     value:

@@ -96,6 +96,8 @@ mappings:
         - path: "../context"
     value:
       alternatives:
-        - conceptMap: "/protocol[at0008]/items[at0083]" # Dominant Hand
-          at0085: 4141311 # Right hand dominant --> Right sided [SNOMED-CT::264180000]
-          at0086: 4137157 # Left  hand dominant --> Left sided [SNOMED-CT::263795004]
+        - conceptMap: 
+            path: "/protocol[at0008]/items[at0083]" # Dominant Hand
+            mapping:
+              at0085: 4141311 # Right hand dominant --> Right sided [SNOMED-CT::264180000]
+              at0086: 4137157 # Left  hand dominant --> Left sided [SNOMED-CT::263795004]
