@@ -1,0 +1,121 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Apgar_v2
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig: 
+    archetype: openEHR-EHR-OBSERVATION.apgar.v2
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3016704 # 1 minute Apgar Score [LOINC::9272-6]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0003]"
+    value:
+      alternatives: &valueAlternatives1
+        - path: "/data[at0002]/events[at0003]/data[at0001]/items[at0025]"
+    unit:
+      alternatives: *valueAlternatives1
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives1
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives1
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives1
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3017235 # 2 minute Apgar Score [LOINC::9273-4]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0026]"
+    value:
+      alternatives: &valueAlternatives2
+        - path: "/data[at0002]/events[at0026]/data[at0001]/items[at0025]"
+    unit:
+      alternatives: *valueAlternatives2
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives2
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives2
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives2
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 0 # 3 minute Apgar score has no code in terminology. Could use general 3382285 total apgar score
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0027]"
+    value:
+      alternatives: &valueAlternatives3
+        - path: "/data[at0002]/events[at0027]/data[at0001]/items[at0025]"
+    unit:
+      alternatives: *valueAlternatives3
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives3
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives3
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives3
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3004221 # 5 minute Apgar Score [LOINC::9274-2]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0028]"
+    value:
+      alternatives: &valueAlternatives4
+        - path: "/data[at0002]/events[at0028]/data[at0001]/items[at0025]"
+    unit:
+      alternatives: *valueAlternatives4
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives4
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives4
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives4
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3016162 # 10 minute Apgar Score [LOINC::9271-8]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0002]/events[at0031]"
+    value:
+      alternatives: &valueAlternatives5
+        - path: "/data[at0002]/events[at0031]/data[at0001]/items[at0025]"
+    unit:
+      alternatives: *valueAlternatives5
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives5
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives5
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives5

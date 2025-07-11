@@ -1,0 +1,40 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Body_segment_circumference_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.body_segment_circumference.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body segment name (Needs better codes on terminology)
+            mapping:
+              at0017: 4111666 # Arm circumference --> Mid upper arm circumference 
+              at0018: 4131519 # Tight circumference --> Lower limb circumference  (lower limb circumference only children are left and right tight)
+              at0019: 0 # Right calf and Left calf exist, could also take into account /data[at0001]/events[at0002]/data[at0003]/items[at0005] Laterality. By default 4086996 Circumference measurement could be used
+              at0041: 0 # Forearm circumference (no suitable code). By default 4086996 Circumference measurement could be used
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Area
+    unit:
+      alternatives: *valueAlternatives
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

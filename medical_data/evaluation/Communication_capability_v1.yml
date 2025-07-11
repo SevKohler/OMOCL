@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Communication_capability_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.communication_capability.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4120746
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0015]/items[openEHR-EHR-CLUSTER.language.v1]/items[at0001]" # Language name

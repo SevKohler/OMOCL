@@ -1,10 +1,19 @@
-archetype_id: "openEHR-EHR-OBSERVATION.pulse.v2"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Pulse_v2
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.pulse.v2
 
 mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4224504
+        - code: 4224504 # Pulse [SNOMED-CT::8499008]
     measurement_date:
       alternatives:
         - path: "/data[at0002]/events[at0003]"

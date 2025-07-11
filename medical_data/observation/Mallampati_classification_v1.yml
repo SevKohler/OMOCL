@@ -1,0 +1,29 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Mallampati_classification_v1
+  version: 0.0.1-alpha 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.mallampati_classification.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4165278 # Mallampati score [SNOMED-CT::273585005]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Mallampati classification
+            mapping:
+              at0006: 4322393 # Class 1 --> Mallampati class I [SNOMED-CT::425247007]
+              at0007: 4313490 # Class 2 --> Mallampati class III [SNOMED-CT::424694002]
+              at0008: 4312672 # Class 3 --> Mallampati class III [SNOMED-CT::424915003]
+              at0009: 4314609 # Class 4 --> Mallampati class IV [SNOMED-CT::424397003]

@@ -1,0 +1,27 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Procedure_screening_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.procedure_screening.v1
+
+mappings:
+  - type: "ProcedureOccurrence"
+    concept_id:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0004]" # Procedure name
+    procedure_start_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0037]"
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    procedure_end_date:
+      optional: true
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0037]"
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"

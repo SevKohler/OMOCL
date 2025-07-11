@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Translation_requirements_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-ADMIN_ENTRY.translation_requirements.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 0 #Use mapping table interpreter language based on ISO 639-3 code
+    observation_date:
+      alternatives:
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[openEHR-EHR-CLUSTER.language.v1]/items[at0001]" #Administrative language/Language name 

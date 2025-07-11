@@ -1,0 +1,23 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Health_risk_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-EVALUATION.health_risk.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 37154027 # Finding of increased risk level
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0023]"
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/items[at0016]/items[at0013]" # Risk factor

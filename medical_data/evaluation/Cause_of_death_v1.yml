@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Cause_of_death_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.cause_of_death.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 21492656 #Cause of death
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0002]" #Direct cause, Multiple causes could be available inside of Cluster for antecedent causes in ELEMENT Cause /data[at0001]/items[at0003]/items[at0004]

@@ -1,0 +1,48 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Medication_screening_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.medication_screening.v1
+
+mappings:
+  - type: "DrugExposure"
+    concept_id:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0021]" # Medication name
+    drug_exposure_start_date:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0003]" # Latest dose
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0002]" # Timing
+        - path: "../context"
+    drug_exposure_end_date:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0003]" # Latest dose
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0002]" # Timing
+        - path: "../context"
+    quantity:
+      optional: true
+      alternatives:
+        - multiplication:
+            - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[openEHR-EHR-CLUSTER.dosage.v1]/items[at0144]" # Dose
+            - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[openEHR-EHR-CLUSTER.dosage.v1]/items[at0164]" # Dosage sequence
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[openEHR-EHR-CLUSTER.dosage.v1]/items[at0144]" # Dose
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4259478 # Medication administration surveillance [SNOMED-CT::410398001]
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0021]" # Medication name
+    qualifier:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0024] " # Used (archetype choice coded with snomed, no need to provide mapping)
+

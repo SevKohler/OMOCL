@@ -1,0 +1,81 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Inspired_oxygen_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.inspired_oxygen.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4141684 #Delivered oxygen flow rate [SNOMED-CT::427081008]
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0051]" #Flow rate 
+    unit:
+      alternatives: *valueAlternatives
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4353936 #Inspired oxygen concentration [SNOMED-CT::250774007], could also be 42869590 Oxygen/Gas total [Pure volume fraction] Inhaled gas [LOINC::71835-3]
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives1
+        - path: "/items[at0052]" #FiO2 
+    unit:
+      alternatives: *valueAlternatives1
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives1
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives1
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives1
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3020716 #Inhaled oxygen concentration [LOINC::3150-0]
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives2
+        - path: "/items[at0053]" #Percent O2 
+    unit:
+      alternatives: 
+        - path: "/items[at0053]" #Percent O2 
+        - code: 9230 #%{oxygen}
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives2
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives2
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives2

@@ -1,0 +1,29 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Cormack_lehane_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.cormack_lehane.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 37398987 # Cormack and Lehane system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0007]/events[at0008]"
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives
+        - conceptMap: 
+            path: "/data[at0007]/events[at0008]/data[at0009]/items[at0001]" # Grading
+            mapping:
+              at0002: 4219400 # Grade 1 --> Cormack and Lehane grade 1 [SNOMED-CT::417548001]
+              at0003: 4221760 # Grade 2 --> Cormack and Lehane grade 2 [SNOMED-CT::417666002]
+              at0004: 4212073 # Grade 3 --> Cormack and Lehane grade 3 [SNOMED-CT::416876007]
+              at0005: 4166735 # Grade 4 --> Cormack and Lehane grade 4 [SNOMED-CT::416141007]

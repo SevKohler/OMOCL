@@ -1,4 +1,13 @@
-archetype_id: "openEHR-EHR-OBSERVATION.height.v2"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Body_height_v2
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.height.v2
 
 mappings:
   - type: "Measurement"
@@ -7,11 +16,11 @@ mappings:
         - code: 3036277
     measurement_date:
       alternatives:
-        - path: "/data[at0001]/events[at0003]"
+        - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Height/Length
     unit:
       alternatives: *valueAlternatives
     range_low:

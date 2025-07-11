@@ -1,0 +1,33 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Substance_use_screening_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.substance_use_screening.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 37162238  # Substance use behavior [SNOMED-CT::1187057000]
+    observation_date:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0003]" # Last used
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0002]" # Timing
+        - path: "/data[at0022]/events[at0023]"
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0021]" # Substance name 
+    qualifier:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0022]/items[at0005]" # Presence?
+            mapping:
+              at0031: 4188539 # Yes --> Yes [SNOMED-CT::373066001]
+              at0032: 4188540 # No --> No [SNOMED-CT::373067005]
+              at0033: 4129922 # Unknown --> Unknown [SNOMED-CT::261665006]

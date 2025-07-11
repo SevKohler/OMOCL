@@ -1,19 +1,28 @@
-archetype_id: "openEHR-EHR-OBSERVATION.blood_pressure.v2"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Blood_pressure_v2
+  version: 0.0.1-alpha 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.blood_pressure.v2
 
 mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4152194
+        - code: 4152194 # [SNOMED-CT::271649006 | Systolic blood pressure]
     measurement_date:
       alternatives:
         - path: "data[at0001]/events[at0006]"
     value:
       alternatives: &valueAlternatives1
-        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0004]"
+        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0004]" # Systolic 
     unit:
       alternatives:
-        - code: 8876
+        - code: 8876 # mm[Hg]
     range_low:
       optional: true
       alternatives: *valueAlternatives1
@@ -27,16 +36,16 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4154790
+        - code: 4154790  # [SNOMED-CT::271650006 | Diastolic blood pressure]
     measurement_date:
       alternatives:
         - path: "data[at0001]/events[at0006]"
     value:
       alternatives: &valueAlternatives2
-        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0005]"
+        - path: "data[at0001]/events[at0006]/data[at0003]/items[at0005]" # Diastolic
     unit:
       alternatives:
-        - code: 8876
+        - code: 8876 # mm[Hg]
     range_low:
       optional: true
       alternatives: *valueAlternatives2

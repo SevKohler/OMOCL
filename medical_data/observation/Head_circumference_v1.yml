@@ -1,19 +1,27 @@
-archetype_id: "openEHR-EHR-OBSERVATION.head_circumference.v1"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Head_circumference_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.head_circumference.v1
 
 mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4181669
+        - code: 4181669 # Head circumference 
     measurement_date:
       alternatives:
-        - path: "data[at0001]/events[at0006]"
+        - path: "data[at0001]/events[at0010]"
     value:
       alternatives: &valueAlternatives1
-        - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]"
+        - path: "/data[at0001]/events[at0010]/data[at0003]/items[at0004]" # Head circumference 
     unit:
-      alternatives:
-        - path: *valueAlternatives1
+      alternatives: *valueAlternatives1
     range_low:
       optional: true
       alternatives: *valueAlternatives1

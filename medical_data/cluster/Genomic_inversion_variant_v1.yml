@@ -1,0 +1,23 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Genomic_inversion_variant_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.genomic_inversion_variant.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 0 #No real binding, needs support for genomic extension
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - path: "/items[at0006]" #Inverted sequence, but also needs /items[at0001] Start position and /items[at0004] End position

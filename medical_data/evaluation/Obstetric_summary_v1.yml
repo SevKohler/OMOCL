@@ -1,0 +1,145 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Obstetric_summary_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.obstetric_summary.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4060186 # Gravida
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0002]" # Gravidity --> Gravida [SNOMED-CT::161732006]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4264419 # Parity
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0003]" # Parity --> Parity [SNOMED-CT::364325004]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4209211 # Number of births at term
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0015]" # Term births --> Number of births at term [SNOMED-CT::440425000]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4208183 # Number of preterm births
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0016]" # Preterm births --> Number of preterm births [SNOMED-CT::440013005]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4090055 # Number of miscarriages or induced terminations of pregnancy
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0017]" # Abortions --> Number of miscarriages or induced terminations of pregnancy [SNOMED-CT::252113007]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4095945 # Number of miscarriages
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0004]" # Miscarriages --> Number of miscarriages [SNOMED-CT::248989003]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4091280 # Number of induced terminations of pregnancy
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0005]" # Terminations --> Number of induced terminations of pregnancy [SNOMED-CT::252114001]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4209345 # Number of ectopic pregnancies
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0011]" # Ectopic pregnancies --> Number of ectopic pregnancies [SNOMED-CT::440537001]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4088444 # Number of live deliveries
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0006]" # Live births --> Number of live deliveries [SNOMED-CT::248991006]
+
+#Multiple births [/data[at0001]/items[at0018] has no corresponding code in terminology
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4092786 # Number of stillbirths
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0012]" # Stillbirths --> Number of stillbirths [SNOMED-CT::252112002]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 44790512 # Number of previous neonatal deaths
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0028]" # Neonatal deaths --> Number of previous neonatal deaths [UK Extension::203431000000102] 
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4092787 # Number of cesarean sections
+    measurement_date:
+      alternatives: 
+        - path: "../context" 
+    value: 
+      alternatives:
+        - path: "/data[at0001]/items[at0027]" # Caesarean sections --> Number of cesarean sections [SNOMED-CT::252115000]

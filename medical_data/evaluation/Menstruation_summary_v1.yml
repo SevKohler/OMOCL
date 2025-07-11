@@ -1,0 +1,28 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Menstruation_summary_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.menstruation_summary.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4172857 # Menopause finding
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/items[at0003]" # Menstrual status
+            mapping:
+              at0026: 0 # Premenarchal (no suitable code)
+              at0005: 4331463 # Premenopausal --> Premenopausal state [SNOMED-CT::22636003]
+              at0006: 45757505 # Perimenopausal --> Perimenopausal state [SNOMED-CT::161541000119104]
+              at0007: 4295261 # Postmenopausal --> Postmenopausal state [SNOMED-CT::76498008]

@@ -1,0 +1,23 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Last_menstrual_period_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.last_menstrual_period.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4072438 # Date of last menstrual period
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/items[at0002]" # Date of onset (LMP) 
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0002]" # Date of onset (LMP) 

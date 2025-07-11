@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Precaution_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.precaution.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4303554 # Surveillance: safety
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0002]" # Condition

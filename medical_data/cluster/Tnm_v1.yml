@@ -1,0 +1,23 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Tnm_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-CLUSTER.tnm.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4219422 #TNM category
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0030]" #TNM assessment 

@@ -1,0 +1,36 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Fluid_input_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.fluid_input.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4092501 # Total fluid input [SNOMED-CT::251852001]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0035]" # Volume
+    unit:
+      alternatives: *valueAlternatives
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4140681 # Liquid substance 
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0036]" # Fluid name

@@ -1,0 +1,30 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Exclusion_specific_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-EVALUATION.exclusion_specific.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 3454241 # Absence of
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0003]" # Excluded concept if coded
+        - conceptMap: 
+            path: "/data[at0001]/items[at0003]/name" # Excluded concept (runtime constraint)
+            mapping:
+              at0008: 4105886 # Adverse reaction substance --> Adverse reaction [SNOMED-CT::281647001]
+              at0005: 4167217 # Family problem/diagnosis --> Family history of clinical finding [SNOMED-CT::416471007] 
+              at0006: 44788358 # Medication --> Medication Record [SNOMED UK extension 163111000000100] 
+              at0004: 4234469 # Problem/diagnosis --> Diagnosis [SNOMED-CT::439401001]
+              at0007: 4322976 # Procedure --> Procedure [SNOMED-CT::71388002] 

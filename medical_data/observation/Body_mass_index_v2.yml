@@ -1,17 +1,26 @@
-archetype_id: "openEHR-EHR-OBSERVATION.body_mass_index.v2"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Body_mass_index_v2
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.body_mass_index.v2
 
 mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 4245997
+        - code: 4245997 # Body mass index
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."
     value:
       alternatives: &valueAlternatives
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body mass index 
     unit:
       alternatives: *valueAlternatives
     range_low:

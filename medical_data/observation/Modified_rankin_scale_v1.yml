@@ -1,0 +1,33 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Modified_rankin_scale_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.modified_rankin_scale.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3654838 # Modified Rankin Scale
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Modified Rankin Scale
+            mapping:
+              at0008: 43022003 # No symptoms --> Disability absent [SNOMED-CT::473137000]
+              at0009: 0 # No significant disability --> Unmapped (No specific code, could be mapped to a Disability percentage children)
+              at0010: 4052765 # Slight disability --> Disability - slight [SNOMED-CT::161043008]
+              at0011: 4052766 # Moderate disability --> Disability - moderate [SNOMED-CT::161044002]
+              at0012: 0 # Moderately severe disability --> Unmapped (No specific code, could be mapped to either moderate or severe or a Disability percentage children)
+              at0013: 4059038 # Severe disability --> Disability - severe [SNOMED-CT::161045001]
+              at0014: 4306655 # Death --> Death [SNOMED-CT::419620001]
+

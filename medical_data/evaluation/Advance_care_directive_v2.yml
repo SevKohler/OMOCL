@@ -1,0 +1,31 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Advance_care_directive_v2
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-EVALUATION.advance_care_directive.v2
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 46234705 # Advance directive
+    observation_date:
+      alternatives:
+        - path: "/protocol[at0010]/items[at0053]" # Valid period start, we lose Valid period end information	  
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/items[at0005]" # Type of directive 
+    qualifier:
+      alternatives:
+        - conceptMap:
+            path: "/data[at0001]/items[at0004]" #Status
+            mapping:
+              at0044: 4253628 # Present [SNOMED-CT::410515003 | Known present] 
+              at0045: 4253629 # Absent [SNOMED-CT::410516002 | Known absent] 
+              at0047: 4129922 # Unknown [SNOMED-CT::261665006 | Unknown]

@@ -1,0 +1,29 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Who_grade_bone_sarcoma_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.who_grade_bone_sarcoma.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 37168628  #Histologic grade of primary malignant neoplasm of bone [SNOMED-CT::1285295003]. No code other than primary and no specific code for WHO grade
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/items[at0001]" # Grade
+            mapping:
+              at0004: 1634371 # Grade 1 (low-grade) --> Grade 1 tumor (Cancer Modifier)
+              at0005: 1634752 # Grade 2 (intermediate-grade) --> Grade 2 tumor (Cancer Modifier)
+              at0006: 1633749 # Grade 3 (high-grade) --> Grade 3 tumor (Cancer Modifier)
+              at0007: 0 # Variable grading --> No code

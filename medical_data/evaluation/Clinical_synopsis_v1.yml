@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Clinical_synopsis_v1
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.clinical_synopsis.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 40771187
+    measurement_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/items[at0002]" # Synopsis

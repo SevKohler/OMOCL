@@ -1,0 +1,23 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Charlson_comorbidity_index_v2
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.charlson_comorbidity_index.v2
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42538860 # Charlson Comorbidity Index
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0072]" # CCI total score

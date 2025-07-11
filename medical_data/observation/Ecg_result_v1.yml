@@ -1,0 +1,59 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Ecg_result_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.ecg_result.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4156045 # ECG finding [SNOMED-CT::271921002]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0101]" # Finding
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4092015 # P wave axis [SNOMED-CT::251192001]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" 
+        - path: "."
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0020]" # P axis
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 45770409 # T wave axis [SNOMED-CT::928081000000109]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" 
+        - path: "."
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0022]" # T axis
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4089466  # QRS Axis  [SNOMED-CT::251196003]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0005]/items[at0021]" # QRS axis

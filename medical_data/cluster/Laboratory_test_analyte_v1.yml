@@ -1,4 +1,13 @@
-archetype_id: "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Laboratory_test_analyte_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-CLUSTER.laboratory_test_analyte.v1
 
 mappings:
   - type: "Measurement"

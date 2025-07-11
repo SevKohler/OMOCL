@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Episode_institution_v0
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-ADMIN_ENTRY.episode_institution.v0
+
+mappings:
+  - type: "Visit"
+    visit_concept:
+      alternatives:
+        - code: 9201 #Inpatient visit
+    start_datetime:
+      alternatives:
+        - path: "/data[at0001]/items[at0004]" #Admission date
+    end_datetime:
+      alternatives:
+        - path: "/data[at0001]/items[at0002]" #Separation date 

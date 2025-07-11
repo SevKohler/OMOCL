@@ -1,4 +1,13 @@
-archetype_id: "openEHR-EHR-EVALUATION.tobacco_smoking_summary.v1"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Tobacco_smoking_summary_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-EVALUATION.tobacco_smoking_summary.v1
 
 mappings:
   - type: "Observation"
@@ -17,7 +26,7 @@ mappings:
     concept_id:
       alternatives:
         - code: 4151768 # pack years
-    observation_date:
+    measurement_date:
       alternatives:
         - path: "../context"
     value:

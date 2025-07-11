@@ -1,0 +1,26 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Symptom_sign_v2
+  version: 0.0.1a
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.symptom_sign.v2
+
+mappings:
+  - type: "ConditionOccurrence"
+    concept_id:
+      alternatives:
+        - path: "/items[at0001]" #Symptom/Sign name 
+    condition_start_date:
+      alternatives:
+        - path: "/items[at0152]" #Episode onset
+        - path: "/items[at0164]" #Onset timing 
+        - path: "../../"
+        - path: "../../../../../context"
+    condition_status_concept_id:
+      optional: true
+      alternatives:
+        - path: "/itmes[at0021]" #Severity category

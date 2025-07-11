@@ -1,0 +1,54 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Menstruation_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.menstruation.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 35626259 # Onset of menstrual cycle [SNOMED-CT::769564007]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Start of menses
+        - path: "/data[at0001]/events[at0002]" # Any event		
+        - path: "../context"
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4058443  # Duration of menstrual flow [SNOMED-CT::161720007]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Start of menses
+        - path: "/data[at0001]/events[at0002]" # Any event		
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Duration of menses
+    unit:
+      alternatives:
+        - code: 8512 # day
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4192740 # Blood clot [SNOMED-CT::75753009]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Start of menses
+        - path: "/data[at0001]/events[at0002]" # Any event		
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0013]" # Blood clots 
+            mapping:
+              at0014: 4181412 # Present [SNOMED-CT::52101004]
+              at0015: 4132135 # Absent [SNOMED-CT::2667000]

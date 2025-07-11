@@ -1,25 +1,22 @@
-archetype_id: "openEHR-EHR-OBSERVATION.clinical_frailty_scale.v1"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Clinical_frailty_scale_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.clinical_frailty_scale.v1
 
 mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - code: 40483383
+        - code: 35621967 # CSHA (Canadian Study of Health and Aging) Clinical Frailty Scale score
     measurement_date:
       alternatives:
         - path: "../context"
     value:
-      alternatives: &valueAlternatives
+      alternatives: 
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
-    unit:
-      optional: true
-      alternatives: *valueAlternatives
-    range_low:
-      optional: true
-      alternatives: *valueAlternatives
-    range_high:
-      optional: true
-      alternatives: *valueAlternatives
-    operator_concept_id:
-      optional: true
-      alternatives: *valueAlternatives

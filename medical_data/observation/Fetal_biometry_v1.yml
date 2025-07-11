@@ -1,0 +1,139 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Fetal_biometry_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.fetal_biometry.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4172711 # Crown rump length of fetus [SNOMED-CT::276352009]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Crown-rump length (CRL)
+    unit:
+      alternatives: *valueAlternatives
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4105892 # Biparietal diameter [SNOMED-CT::281688001]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives1
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Biparietal diameter (BPD)
+    unit:
+      alternatives: *valueAlternatives1
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 608126 # Occipitofrontal diameter of fetal head [SNOMED-CT::1156893001]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives2
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Occipito-frontal diameter (OFD)
+    unit:
+      alternatives: *valueAlternatives2
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4181669 # Head circumference [SNOMED-CT::363812007]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives3
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Head circumference (HC)
+    unit:
+      alternatives: *valueAlternatives3
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3027950 # Fetal Cerebellum Diameter transverse US [LOINC::11863-8]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives4
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0009]" # Trans-cerebellar diameter (TCD)
+    unit:
+      alternatives: *valueAlternatives4
+
+#No code for Interocular distance (IOD)
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3013597  # Fetal Head Binocular distance US [LOINC::11629-3]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives5
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]" # Binocular distance (BOD)
+    unit:
+      alternatives: *valueAlternatives5
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 608484  # Abdominal circumference of fetus [SNOMED-CT::1325431000000103]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives6
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0012]" # Abdominal circumference (AC)
+    unit:
+      alternatives: *valueAlternatives6
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 37167832 # Femur length of fetus [SNOMED-CT::1269040002]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives7
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0013]" # Femur length (FL)
+    unit:
+      alternatives: *valueAlternatives7
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3037788  # Fetal Humerus diaphysis [Length] US [LOINC::11966-9]
+    measurement_date:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context" 
+    value: 
+      alternatives: &valueAlternatives8
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]" # Humeral length (HL)
+    unit:
+      alternatives: *valueAlternatives8

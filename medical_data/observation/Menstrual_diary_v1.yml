@@ -1,0 +1,62 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Menstrual_diary_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.menstrual_diary.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 364312007 # Menstrual bleeding character [SNOMED-CT::364312007]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Any event
+        - path: "../context"
+    value:
+      alternatives: 
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Flow 
+            mapping:
+              at0005: 4302555 # Flooding --> Menorrhagia [SNOMED-CT::386692008] (synonyms, Flooding during periods, Hypermenorrhoea, Heavy period)
+              at0005: 4302555 # Heavy flow --> Menorrhagia [SNOMED-CT::386692008] (Heavy menstrual period was remmaped to menorrhagia too)
+              at0005: 4203885 # Medium flow --> Normal menstrual blood loss [SNOMED-CT::308550003] (Average blood loss during periods is mapped to this)
+              at0005: 4275882 # Light flow --> Hypomenorrhea [SNOMED-CT::64206003]
+              at0005: 4238113 # Spotting --> Menstrual spotting [SNOMED-CT::9126005]
+              at0022: 605879 # No bleeding --> No bleeding [SNOMED-CT::1141705002]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4270150 # Quantity of menstrual blood loss [SNOMED-CT::364308001]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Any event 
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0010]" # Volume
+    unit:
+      alternatives: 
+        - code: 8512 # mL
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4192740 # Blood clot [SNOMED-CT::75753009]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Start of menses 
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]" # Blood clots 
+            mapping:
+              at0014: 4181412 # Present [SNOMED-CT::52101004]
+              at0015: 4132135 # Absent [SNOMED-CT::2667000]

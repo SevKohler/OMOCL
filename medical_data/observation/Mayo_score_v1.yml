@@ -1,0 +1,26 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Mayo_score_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.mayo_score.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4175713 # Severity score  [SNOMED-CT::278305009] (No code for Mayo score, use generic + qualifier)
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    value:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0029]" # Total Mayo score
+    qualifier:
+      alternatives:
+        - code: 81893 # Ulcerative colitis [SNOMED-CT:: 64766004] 

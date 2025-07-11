@@ -1,0 +1,49 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Nyha_heart_failure_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.nyha_heart_failure.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 36305765 # Functional capacity NYHA [LOINC::88020-3]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Any event
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Functional capacity
+            mapping:
+              at0005: 36307969 # Class I --> Class I [LOINC::LA28404-4]
+              at0006: 36309052 # Class II --> Class II [LOINC::LA28405-1]
+              at0007: 36307909 # Class III --> Class III [LOINC::LA28406-9]
+              at0008: 36307909 # Class IIIa --> Class III [LOINC::LA28406-9] (No specific code for subtype)
+              at0009: 36307909 # Class IIIb --> Class III [LOINC::LA28406-9] (No specific code for subtype)
+              at0010: 36307855 # Class IV --> Class IV [LOINC::LA28407-7]
+
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 36304558 # Objective assessment of cardiovascular disease NYHA [LOINC::88021-1]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]" # Any event
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]" # Objective assessment
+            mapping:
+              at0012: 36307588 # Class A --> No objective evidence of cardiovascular disease  [LOINC::LA28408-5]
+              at0013: 36309704 # Class B --> Objective evidence of minimal cardiovascular disease  [LOINC::LA28409-3]
+              at0014: 36309238 # Class C --> Objective evidence of moderately severe cardiovascular disease  [LOINC::LA28410-1]
+              at0015: 36308301 # Class D --> Objective evidence of severe cardiovascular disease  [LOINC::LA28411-9]

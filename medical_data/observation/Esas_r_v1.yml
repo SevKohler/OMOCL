@@ -1,0 +1,161 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Esas_r_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.esas_r.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Pain
+    qualifier:
+      alternatives:
+        - code: 44813811 # Symptom Assessment Scale - pain score [SNOMED-CT UK extension::912051000000108], or in general 4022240 Pain score [SNOMED-CT::225908003]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" # Tiredness
+    qualifier:
+      alternatives:
+        - code: 44812274 # Symptom Assessment Scale - fatigue score [SNOMED-CT UK extension::912081000000102], or in general 4223659 Fatigue [SNOMED-CT::84229001]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" # Drowsiness
+    qualifier:
+      alternatives:
+        - code: 44812283 # Symptom Assessment Scale - difficulty sleeping score [SNOMED-CT UK extension::912191000000101] (probably different semantics), or in general 4196193 Drowsiness [SNOMED-CT::79519003]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0007]" # Nausea
+    qualifier:
+      alternatives:
+        - code: 44812281 # Symptom Assessment Scale - nausea score [SNOMED-CT UK extension::912171000000100], or in general 45763927 Level of nausea [SNOMED-CT::700471003]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Lack of appetite
+    qualifier:
+      alternatives:
+        - code: 44812282 # Symptom Assessment Scale - appetite problems score [SNOMED-CT UK extension::912181000000103], or in general 40351576 Lack of appetite [SNOMED-CT::271816004]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0009]" # Shortness of breath
+    qualifier:
+      alternatives:
+        - code: 44812277 # Symptom Assessment Scale - breathing problems score [SNOMED-CT UK extension::912111000000105], or in general 4238805 Respiration observable [SNOMED-CT::364062005]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0010]" # Depression
+    qualifier:
+      alternatives:
+        - code: 4225862 # Level of depression [SNOMED-CT::405049007]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]" # Anxiety
+    qualifier:
+      alternatives:
+        - code: 4224766 # Level of anxiety [SNOMED-CT::405051006]
+
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0012]" # Well-being
+    qualifier:
+      alternatives:
+        - code: 4234650 # Personal wellbeing status [SNOMED-CT::405153007]
+ 
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 42873028 # Edmonton symptom assessment system
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "."
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]/items[at0017]" # Other problem, Rating
+    qualifier:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0014]/items[at0016]" # Other problem, Problem name

@@ -1,0 +1,37 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Body_segment_discrepancy_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.body_segment_discrepancy.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body segment measurement (Needs better codes on terminology)
+            mapping:
+              at0049: 37312755 # Upper arm length   --> Length discrepancy between upper limbs
+              at0050: 45773566 # Leg length  --> Lower limb length discrepancy 
+              at0051: 45773566 # Upper leg length --> Lower limb length discrepancy 
+              at0052: 45773566 # Foot length --> Lower limb length discrepancy 
+              at0053: 45773566 # Knee height --> Lower limb length discrepancy 
+              at0054: 37312755 # Forearm length -->  Length discrepancy between upper limbs
+              at0055: 45773566 # Lower leg length --> Lower limb length discrepancy 
+              at0056: 37312755 # Shoulder height --> Length discrepancy between upper limbs
+              at0057: 37312755 # Sitting shoulder height --> Length discrepancy between upper limbs
+              at0058: 45773566 # Calf circumference --> Lower limb length discrepancy 
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Discrepancy
+    unit:
+      alternatives: *valueAlternatives

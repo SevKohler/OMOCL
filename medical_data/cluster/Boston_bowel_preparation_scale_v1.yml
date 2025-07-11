@@ -1,0 +1,35 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Boston_bowel_preparation_scale_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.boston_bowel_preparation_scale.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 36717586 #BBPS - Boston bowel preparation scale
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/items[at0012]"
+    unit:
+      alternatives: *valueAlternatives
+        #- code: ucum unidades si aplica
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

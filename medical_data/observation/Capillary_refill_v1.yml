@@ -1,0 +1,36 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Capillary_refill_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.capillary_refill.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 3045676 # Capillary refill [Time]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    value:
+      alternatives: &valueAlternatives
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0009]" # Refill time
+    unit:
+      alternatives: 
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0009]" # Refill time
+        - code: 8555 # seconds
+    range_low:
+      optional: true
+      alternatives: *valueAlternatives
+    range_high:
+      optional: true
+      alternatives: *valueAlternatives
+    operator_concept_id:
+      optional: true
+      alternatives: *valueAlternatives

@@ -1,0 +1,26 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Gist_modified_nih_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.gist_modified_nih.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 40772043  #Finding of risk level [SNOMED-CT::1281820001]. No code specific for GIST risk
+    observation_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - path: "/items[at0004]" #Risk category
+    qualifier:
+      alternatives:
+        - code: 4170421 # Gastrointestinal stromal tumor [SNOMED-CT::420120006] 

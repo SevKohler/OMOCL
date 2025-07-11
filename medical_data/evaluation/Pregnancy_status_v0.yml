@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Pregnancy_status_v0
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-Evaluation.pregnancy_status.v0
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 42528957 # 	Pregnancy status [LOINC::82810-3]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]"
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"

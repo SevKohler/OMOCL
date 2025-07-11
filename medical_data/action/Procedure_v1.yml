@@ -1,4 +1,13 @@
-archetype_id: "openEHR-EHR-ACTION.procedure.v1"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Procedure_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-ACTION.procedure.v1
 
 mappings:
   - type: "ProcedureOccurrence"
