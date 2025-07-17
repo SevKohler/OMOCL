@@ -1,4 +1,13 @@
-archetype_id: "openEHR-EHR-ADMIN_ENTRY.person_data.v0"
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: person_data.v0
+  version: 1.0.0
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-ADMIN_ENTRY.person_data.v0
 
 mappings:
   - type: "Person"
