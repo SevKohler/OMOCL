@@ -1,7 +1,7 @@
-engine: EOS/v0.0.62
+grammar: OMOCL/v1.0.0
 type: model
 metadata:
-  name: Pulse_oximetry_v1
+  name: Body_segment_length
   version: 0.0.1a 
 spec: # OHDSI OMOP v5.4
   system: OMOP
@@ -13,19 +13,21 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body segment name
-          at0017: 4093976 # Sitting height  -->  Sitting height
-          at0024: 764566 # Armspan  --> Arm span
-          at0018: 4097012 # Upper arm length  --> Arm length
-          at0019: 4093177 # Leg length  --> Leg length
-          at0020: 4093177 # Upper leg length  --> Leg length (no specific code)
-          at0021: 4092582 # Foot length  --> Foot length
-          at0022: 4172711 # Crown-rump length  --> Crown rump length of fetus
-          at0023: 4224119 # Knee height  --> Knee height
-          at0041: 4097012 # Forearm length  --> Arm length (could be length of ulna or radius, but not exactly, so a generic one is chosen) 
-          at0042: 4093177 # Lower leg length  --> Leg length (no specific code)
-          at0043: 0 # Shoulder height (Unmapped)
-          at0044: 0 # Sitting shoulder height (Unmapped)
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # Body segment name
+            mapping:
+              at0017: 4093976 # Sitting height  -->  Sitting height
+              at0024: 764566 # Armspan  --> Arm span
+              at0018: 4097012 # Upper arm length  --> Arm length
+              at0019: 4093177 # Leg length  --> Leg length
+              at0020: 4093177 # Upper leg length  --> Leg length (no specific code)
+              at0021: 4092582 # Foot length  --> Foot length
+              at0022: 4172711 # Crown-rump length  --> Crown rump length of fetus
+              at0023: 4224119 # Knee height  --> Knee height
+              at0041: 4097012 # Forearm length  --> Arm length (could be length of ulna or radius, but not exactly, so a generic one is chosen) 
+              at0042: 4093177 # Lower leg length  --> Leg length (no specific code)
+              at0043: 0 # Shoulder height (Unmapped)
+              at0044: 0 # Sitting shoulder height (Unmapped)
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
@@ -34,12 +36,7 @@ mappings:
       alternatives: &valueAlternatives
         - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Length
     unit:
-      alternatives: 
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0008]" # Length
-        - conceptMap:
-          in: 8533
-          cm: 8582 
-          mm: 8588 
+      alternatives: *valueAlternatives
     range_low:
       optional: true
       alternatives: *valueAlternatives

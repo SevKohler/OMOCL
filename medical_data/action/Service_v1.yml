@@ -1,4 +1,4 @@
-engine: EOS/v0.0.62
+grammar: OMOCL/v1.0.0
 type: model
 metadata:
   name:  Service_v1

@@ -1,4 +1,4 @@
-engine: EOS/v0.0.62
+grammar: OMOCL/v1.0.0
 type: model
 metadata:
   name: Spirometry_result_v2
@@ -13,23 +13,25 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0052]/name" # Volume
-          at0065: 4176265 # FVC --> Forced vital capacity [SNOMED-CT::50834005]
-          at0064: 4308122 # SVC --> Slow vital capacity [SNOMED-CT::83411002]
-          at0172: 0 # FIVC, No map. Code found in CDISC
-          at0174: 4092629 # IVC --> Inspiratory vital capacity [SNOMED-CT::251913009]
-          at0176: 4105475 # IC --> Inspiratory capacity [SNOMED-CT::29533001]
-          at0145: 0 # FEV0.5, no map
-          at0070: 4089936 # FEV0.75 --> Forced expired volume in 0.75 seconds [SNOMED-CT::251910007]
-          at0067: 4241837 # FEV1 --> Forced expired volume in 1 second [SNOMED-CT::59328004]
-          at0146: 0 # FEV2, no map
-          at0068: 44808420 # FEV3 --> Forced expired volume in 3 seconds [SNOMED-CT UK::829801000000106]
-          at0069: 618885 # FEV6 --> Forced expired volume in six seconds [SNOMED-CT::878869001]
-          at0171: 4090663 # FIV1 --> Forced inspired volume in 1 second [SNOMED-CT::251912004]
-          at0082: 4029625 # TV --> Tidal volume [SNOMED-CT::13621006]
-          at0077: 4207980 # ERV --> Expiratory reserve volume [SNOMED-CT::55532004]
-          at0078: 4206339 # IRV --> Inspiratory reserve volume [SNOMED-CT::55562005]
-          at0176: 4089932 # MVV --> Maximum voluntary ventilation [SNOMED-CT::251901004]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0052]/name" # Volume
+            mapping:
+              at0065: 4176265 # FVC --> Forced vital capacity [SNOMED-CT::50834005]
+              at0064: 4308122 # SVC --> Slow vital capacity [SNOMED-CT::83411002]
+              at0172: 0 # FIVC, No map. Code found in CDISC
+              at0174: 4092629 # IVC --> Inspiratory vital capacity [SNOMED-CT::251913009]
+              at0176: 4105475 # IC --> Inspiratory capacity [SNOMED-CT::29533001]
+              at0145: 0 # FEV0.5, no map
+              at0070: 4089936 # FEV0.75 --> Forced expired volume in 0.75 seconds [SNOMED-CT::251910007]
+              at0067: 4241837 # FEV1 --> Forced expired volume in 1 second [SNOMED-CT::59328004]
+              at0146: 0 # FEV2, no map
+              at0068: 44808420 # FEV3 --> Forced expired volume in 3 seconds [SNOMED-CT UK::829801000000106]
+              at0069: 618885 # FEV6 --> Forced expired volume in six seconds [SNOMED-CT::878869001]
+              at0171: 4090663 # FIV1 --> Forced inspired volume in 1 second [SNOMED-CT::251912004]
+              at0082: 4029625 # TV --> Tidal volume [SNOMED-CT::13621006]
+              at0077: 4207980 # ERV --> Expiratory reserve volume [SNOMED-CT::55532004]
+              at0078: 4206339 # IRV --> Inspiratory reserve volume [SNOMED-CT::55562005]
+              at0176: 4089932 # MVV --> Maximum voluntary ventilation [SNOMED-CT::251901004]
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
@@ -52,19 +54,21 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0057]/name" # Flow rate
-          at0152: 4087260 # PEFR --> Peak expiratory flow rate [SNOMED-CT::18491006]
-          at0205: 4090328 # PIFR --> Maximum inspiratory flow rate [SNOMED-CT::251923000]
-          at0072: 4090668 # FEF25-75% --> Forced expiratory flow rate between 25+75% of vital capacity [SNOMED-CT::251932003]
-          at0073: 0 # FEF25-50%, No map. Code found in CDISC
-          at0074: 0 # FIF25-75%, No map. Code found in CDISC
-          at0075: 0 # FIF25-50%, No map. Code found in CDISC
-          at0177: 4089939 # FEF25% --> Maximum expiratory flow rate at 75% of vital capacity [SNOMED-CT::251921003]
-          at0178: 4090667 # FEF50% --> Maximum expiratory flow rate at 50% of vital capacity [SNOMED-CT::251920002]
-          at0179: 4092630 # FEF75% --> Maximum expiratory flow rate at 25% of vital capacity [SNOMED-CT::251919008]
-          at0186: 4089942 # FIF25% --> Maximum inspiratory flow rate at 75% of vital capacity [SNOMED-CT::251927004]
-          at0187: 4089941 # FIF50% --> Maximum inspiratory flow rate at 50% of vital capacity [SNOMED-CT::251926008]
-          at0188: 4089940 # FIF75% --> Maximum inspiratory flow rate at 25% of vital capacity [SNOMED-CT::251924006]
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0057]/name" # Flow rate
+            mapping:
+              at0152: 4087260 # PEFR --> Peak expiratory flow rate [SNOMED-CT::18491006]
+              at0205: 4090328 # PIFR --> Maximum inspiratory flow rate [SNOMED-CT::251923000]
+              at0072: 4090668 # FEF25-75% --> Forced expiratory flow rate between 25+75% of vital capacity [SNOMED-CT::251932003]
+              at0073: 0 # FEF25-50%, No map. Code found in CDISC
+              at0074: 0 # FIF25-75%, No map. Code found in CDISC
+              at0075: 0 # FIF25-50%, No map. Code found in CDISC
+              at0177: 4089939 # FEF25% --> Maximum expiratory flow rate at 75% of vital capacity [SNOMED-CT::251921003]
+              at0178: 4090667 # FEF50% --> Maximum expiratory flow rate at 50% of vital capacity [SNOMED-CT::251920002]
+              at0179: 4092630 # FEF75% --> Maximum expiratory flow rate at 25% of vital capacity [SNOMED-CT::251919008]
+              at0186: 4089942 # FIF25% --> Maximum inspiratory flow rate at 75% of vital capacity [SNOMED-CT::251927004]
+              at0187: 4089941 # FIF50% --> Maximum inspiratory flow rate at 50% of vital capacity [SNOMED-CT::251926008]
+              at0188: 4089940 # FIF75% --> Maximum inspiratory flow rate at 25% of vital capacity [SNOMED-CT::251924006]
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
@@ -87,10 +91,12 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0156]/name" # Pressure
-          at0170: 4066034 # MEP --> Peak expiratory pressure [SNOMED-CT::17202005]
-          at0181: 4101694 # MIP --> Peak inspiratory pressure [SNOMED-CT::27913002]
-          at0182: 0 # SNIP, No map
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0156]/name" # Pressure
+            mapping:
+              at0170: 4066034 # MEP --> Peak expiratory pressure [SNOMED-CT::17202005]
+              at0181: 4101694 # MIP --> Peak inspiratory pressure [SNOMED-CT::27913002]
+              at0182: 0 # SNIP, No map
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
@@ -113,11 +119,13 @@ mappings:
   - type: "Measurement"
     concept_id:
       alternatives:
-        - conceptMap: "/data[at0001]/events[at0002]/data[at0003]/items[at0055]/name" # Ratio
-          at0081: 4090331 # FEV1/FVC ratio --> Forced expired volume in one second/forced vital capacity ratio [SNOMED-CT::251944000]
-          at0080: 0 # FEV1/SVC ratio, No map. Code found in CDISC
-          at0189: 45765566 # FEV1/FEV6 ratio --> Forced expiratory volume in one second/Forced expiratory volume in six seconds ratio [SNOMED-CT::702534005]
-          at0190: 0 # FEV1/IVC ratio, No map
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0055]/name" # Ratio
+            mapping:
+              at0081: 4090331 # FEV1/FVC ratio --> Forced expired volume in one second/forced vital capacity ratio [SNOMED-CT::251944000]
+              at0080: 0 # FEV1/SVC ratio, No map. Code found in CDISC
+              at0189: 45765566 # FEV1/FEV6 ratio --> Forced expiratory volume in one second/Forced expiratory volume in six seconds ratio [SNOMED-CT::702534005]
+              at0190: 0 # FEV1/IVC ratio, No map
     measurement_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"

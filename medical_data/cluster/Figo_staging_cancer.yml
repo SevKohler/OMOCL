@@ -1,0 +1,33 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Figo_staging_cancer_v1
+  version: 0.0.1a 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-CLUSTER.figo_staging_cancer.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - conceptMap: 
+            path: "/items[at0005]" # Staging criteria
+            mapping:
+              at0007: 4023332 # Cervix uteri --> FIGO staging system for cervical carcinoma [SNOMED-CT::106250008]
+              at0008: 4115118 # Corpus uteri (endometrium) --> FIGO uterine tumor staging system [SNOMED-CT::263795004]      
+              at0009: 4115118 # Uterine sarcoma --> FIGO uterine tumor staging system [SNOMED-CT::263795004]
+              at0010: 4115119 # Ovary, fallopian tube, and peritoneum --> FIGO ovarian tumor staging system [SNOMED-CT::254386003]      
+              at0011: 4110415 # Vagina --> FIGO Vaginal tumor staging system [SNOMED-CT::254384000]      
+              at0012: 4023331 # Vulva --> FIGO staging system for vulvar carcinoma [SNOMED-CT::106245002], could also be FIGO staging system for vulvar melanoma [SNOMED-CT::106246001], not enough granularity on archetype
+              at0013: 4110414 # Gestational trophoblastic neoplasia --> FIGO staging system of gynecological malignancy (parent concept) [SNOMED-CT::254383006]           
+        - code: 4110414 #FIGO staging system of gynecological malignancy (parent concept) [SNOMED-CT::254383006]
+    measurement_date:
+      alternatives:
+        - path: "../../"
+        - path: "../../../../../context"
+    value:
+      alternatives:
+        - path: "/items[at0002]" #FIGO stage (can be coded, codes in terminology, see OMOP code 734316 from Cancer modifier vocab)
