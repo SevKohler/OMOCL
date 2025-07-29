@@ -23,7 +23,7 @@ For a engine to execute the mappings see [Eos](https://github.com/SevKohler/Eos)
 
 *counting published archetypes from the international ckm*
 
-The missing archetypes are not transformable into OMOP in a useful way, please check the documentation/ for more information. 
+The missing archetypes are not transformable into OMOP in a useful way, please check the docs/ pdf for more information. 
 Status 18.02.2025
 
 For the caluculation and overview of what is mapped see:

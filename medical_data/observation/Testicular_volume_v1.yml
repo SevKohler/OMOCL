@@ -2,7 +2,7 @@ grammar: OMOCL/v1.0.0
 type: model
 metadata:
   name: Testicular_volume_v1
-  version: 0.0.1a 
+  version: 1.0.0
 spec: # OHDSI OMOP v5.4
   system: OMOP
   version: 5.4
