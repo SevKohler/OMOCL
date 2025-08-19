@@ -11,7 +11,7 @@ Thanks!
 Introduction
 ------
 
-The OMOP Conversion Language is a declerative mappings language for openEHR archetype-to-CDM mappings. It is based on yaml.
+The OMOP Conversion Language is a declarative mappings language for openEHR archetype-to-CDM mappings. It is based on yaml.
 For more info check our [wiki](https://github.com/SevKohler/OMOCL/wiki). 
 
 For a engine to execute the mappings see [Eos](https://github.com/SevKohler/Eos)
