@@ -10,11 +10,11 @@ spec: # OHDSI OMOP v5.4
     archetype: openEHR-EHR-OBSERVATION.mallampati_classification.v1
 
 mappings:
-  - type: "Measurement"
+  - type: "Observation"
     concept_id:
       alternatives:
-        - code: 4165278 # Mallampati score [SNOMED-CT::273585005]
-    measurement_date:
+        - code: 4172677 # Mallampati grade [SNOMED-CT::277388005]. If preferred could be mapped to Measurement 4165278 # Mallampati score [SNOMED-CT::273585005]
+    observation_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]"
         - path: "."

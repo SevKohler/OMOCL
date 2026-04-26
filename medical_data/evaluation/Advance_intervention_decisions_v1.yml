@@ -22,8 +22,8 @@ mappings:
         - conceptMap: 
             path: "/data[at0001]/items[at0009]" # CPR decision
             mapping:
-              at0010: 3172879 # Full CPR --> "Use all resuscitation measures available"  (from Nebraska lexicon)
-              at0011: 42872484 # Limited CPR --> “For cardiopulmonary resuscitation” [SNOMED-CT::450475007] 
+              at0010: 42872484 # Full CPR --> “For cardiopulmonary resuscitation” [SNOMED-CT::450475007] 
+              at0011: 0 # Limited CPR --> Not in SNOMED-CT
               at0012: 42872485 # No CPR  --> [SNOMED-CT::450476008 | Not for cardiopulmonary resuscitation] 
               at0013: 4129922 # Unknown --> [SNOMED-CT::261665006 | Unknown] 
     qualifier:
