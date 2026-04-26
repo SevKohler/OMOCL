@@ -1,0 +1,38 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Travel_screening_v1
+  version: 1.0.0 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.travel_screening.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 40483663 # Detail of history of travel [SNOMED-CT::443846001]
+    observation_date:
+      alternatives:
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0003]" # Timing
+        - path: "/data[at0022]/events[at0023]"
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0021]" # Travel activity
+            mapping:
+              at0045: 618730 # Domestic travel --> Recent domestic travel [SNOMED-CT::874902000], the only 'domestic' concept children of 'Travel'
+              at0046: 618729 # International travel --> International travel  [SNOMED-CT::874901007]
+        - path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0021]" # Travel activity
+    qualifier:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0022]/events[at0023]/data[at0001]/items[at0026]/items[at0024]" # Occurred?
+            mapping:
+              at0036: 4188539 # Yes --> Yes [SNOMED-CT::373066001]
+              at0037: 4188540 # No --> No [SNOMED-CT::373067005]
+              at0039: 4129922 # Unknown --> Unknown [SNOMED-CT::261665006]
+              at0048: 45882025 # Unsure --> Unsure [LOINC::LA14072-5]

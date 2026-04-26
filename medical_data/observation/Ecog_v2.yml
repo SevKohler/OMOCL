@@ -1,0 +1,31 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Ecog_v2
+  version: 1.0.0 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.ecog.v2
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4308014 # ECOG Performance Status score [LOINC::89247-1], for some reason [SNOMED-CT::423740007] ECOG performance status and [SNOMED-CT::424122007] ECOG performance status finding are non-standard in OMOP and are mapped to this LOINC
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+        - path: "../context"
+    value:
+      alternatives:
+        - conceptMap: 
+            path: "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" # ECOG performance status 
+            mapping:
+              at0005: 4175026 # ECOG performance status - grade 0 [SNOMED-CT::425389002]
+              at0006: 4173614 # ECOG performance status - grade 1 [SNOMED-CT::422512005]
+              at0007: 4172043 # ECOG performance status - grade 2 [SNOMED-CT::422894000]
+              at0008: 4174241 # ECOG performance status - grade 3 [SNOMED-CT::423053003]
+              at0009: 4174251 # ECOG performance status - grade 4 [SNOMED-CT::423237006]
+              at0010: 4173456 # ECOG performance status - grade 5 [SNOMED-CT::423409001]

@@ -20,7 +20,7 @@ mappings:
               at0064: 4308122 # SVC --> Slow vital capacity [SNOMED-CT::83411002]
               at0172: 0 # FIVC, No map. Code found in CDISC
               at0174: 4092629 # IVC --> Inspiratory vital capacity [SNOMED-CT::251913009]
-              at0176: 4105475 # IC --> Inspiratory capacity [SNOMED-CT::29533001]
+              at0076: 4105475 # IC --> Inspiratory capacity [SNOMED-CT::29533001]
               at0145: 0 # FEV0.5, no map
               at0070: 4089936 # FEV0.75 --> Forced expired volume in 0.75 seconds [SNOMED-CT::251910007]
               at0067: 4241837 # FEV1 --> Forced expired volume in 1 second [SNOMED-CT::59328004]
