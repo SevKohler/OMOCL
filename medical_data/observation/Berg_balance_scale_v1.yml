@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Berg_balance_scale_v1
+  version: 1.0.0 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.berg_balance_scale.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 4326493 # Berg balance scale [SNOMED::428203000]
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0088]"

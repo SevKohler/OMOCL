@@ -1,0 +1,22 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Guss_icu_v1
+  version: 1.0.0 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: openEHR-EHR-OBSERVATION.guss_icu.v1
+
+mappings:
+  - type: "Measurement"
+    concept_id:
+      alternatives:
+        - code: 1242884 # Gugging Swallowing Screen [SNOMED::1289999007], CAREFUL! this is NOT specific for ICU and there is no way of putting it on Measurement as there is no qualifier
+    measurement_date:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]"
+    value:
+      alternatives:
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0027]" # Total sum

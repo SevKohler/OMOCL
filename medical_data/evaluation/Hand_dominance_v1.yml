@@ -1,0 +1,28 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name:  Hand_dominance_v1
+  version: 1.0.0
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype:  openEHR-EHR-EVALUATION.hand_dominance.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 4211853 #Handedness
+    observation_date:
+      alternatives:
+        - path: "../context"
+    value:
+      alternatives:
+	     - conceptMap: 
+            path: "/data[at0001]/items[at0002]" # Dominant hand
+            mapping:
+              at0003: 4263218 # Right-handed [SNOMED::46669005]
+              at0004: 4227730 # Left-handed [SNOMED::87683000]
+              at0005: 4045863 # Ambidextrous [SNOMED::23088002]
+              at0006: 0 # Mixed-handed, no code, the only other term children of Handedness finding is Unknown handedness

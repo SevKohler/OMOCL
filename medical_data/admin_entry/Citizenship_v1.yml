@@ -1,0 +1,23 @@
+grammar: OMOCL/v1.0.0
+type: model
+metadata:
+  name: Citizenship_v1
+  version: 1.0.0 
+spec: # OHDSI OMOP v5.4
+  system: OMOP
+  version: 5.4
+  openEhrConfig:
+    archetype: 	openEHR-EHR-ADMIN_ENTRY.citizenship.v1
+
+mappings:
+  - type: "Observation"
+    concept_id:
+      alternatives:
+        - code: 37155839 # Citizenship status [SNOMED-CT::34051000087100]
+    observation_date:
+      alternatives:
+        - path: "/data[at0001]/items[at0016]/items[at0004]" # Valid from
+        - path: "../context"
+    value:
+      alternatives:
+        - path: "/data[at0001]/items[at0016]/items[at0030]" # Country
