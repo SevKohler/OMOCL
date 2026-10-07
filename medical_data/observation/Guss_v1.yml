@@ -19,4 +19,4 @@ mappings:
         - path: "/data[at0001]/events[at0002]"
     value:
       alternatives:
-        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0027]" # Total sum
+        - path: "/data[at0001]/events[at0002]/data[at0003]/items[at0066]" # Total sum
