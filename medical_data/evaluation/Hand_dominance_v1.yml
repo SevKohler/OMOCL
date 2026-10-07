@@ -19,7 +19,7 @@ mappings:
         - path: "../context"
     value:
       alternatives:
-	     - conceptMap: 
+        - conceptMap:
             path: "/data[at0001]/items[at0002]" # Dominant hand
             mapping:
               at0003: 4263218 # Right-handed [SNOMED::46669005]
