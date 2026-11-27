@@ -13,7 +13,7 @@ mappings:
   - type: "Observation"
     concept_id:
       alternatives:
-        - code: 364312007 # Menstrual bleeding character [SNOMED-CT::364312007]
+        - code: 4267969 # Menstrual bleeding character [SNOMED-CT::364312007]
     observation_date:
       alternatives:
         - path: "/data[at0001]/events[at0002]" # Any event
